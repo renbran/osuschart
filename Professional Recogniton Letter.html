@@ -489,6 +489,12 @@
             padding-top: 8px;
         }
 
+        .ltr-signature .sig-image {
+            max-width: 200px;
+            height: auto;
+            margin-bottom: 5px;
+        }
+
         .ltr-signature .sig-name {
             font-family: 'Playfair Display', serif;
             font-size: 11pt;
@@ -814,6 +820,14 @@
                 </div>
                 <div class="form-row">
                     <div class="form-group">
+                        <label>
+                            <input type="checkbox" id="showSignature" checked>
+                            Show Signature Image
+                        </label>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
                         <label>Filter by Type</label>
                         <select id="typeFilter" onchange="filterList()">
                             <option value="all">All Types</option>
@@ -1116,6 +1130,7 @@
                         <div class="ltr-signature-area">
                             <div class="ltr-signature">
                                 <div class="sig-line">
+                                    ${document.getElementById('showSignature').checked ? '<img src="https://i.postimg.cc/nsNcMb2R/signature.png" alt="Signature" class="sig-image">' : ''}
                                     <div class="sig-name">HISHAM EL ASSAAD</div>
                                     <div class="sig-title">FOUNDER</div>
                                     <div class="sig-title">OSUS REAL ESTATE BROKERAGE L.L.C</div>
