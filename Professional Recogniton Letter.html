@@ -1069,6 +1069,7 @@
             const effDate = formatDate(document.getElementById('effectiveDate').value);
             const refNum = `OSUS/HR/${new Date().getFullYear()}/${String(idx + 1).padStart(4, '0')}`;
             const {intro, body} = getBody(emp, effDate);
+            const showSig = document.getElementById('showSignature').checked;
             
             return `
             <div class="letter-page">
@@ -1127,7 +1128,7 @@
                         <div class="ltr-signature-area">
                             <div class="ltr-signature">
                                 <div class="sig-line">
-                                    ${document.getElementById('showSignature').checked ? '<img src="https://i.postimg.cc/4m0n0SHy/founder-signature.png" alt="Founder Signature" class="sig-image">' : ''}
+                                    ${showSig ? '<img src="https://i.postimg.cc/4m0n0SHy/founder-signature.png" alt="Founder Signature" class="sig-image">' : ''}
                                     <div class="sig-name">HISHAM EL ASSAAD</div>
                                     <div class="sig-title">FOUNDER</div>
                                     <div class="sig-title">OSUS REAL ESTATE BROKERAGE L.L.C</div>
