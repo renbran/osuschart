@@ -1,0 +1,502 @@
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OSUS Properties - Employment Certificate</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: white;
+            padding: 30px 50px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .header {
+            text-align: center;
+            border-bottom: 3px solid #800020;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            color: #800020;
+            font-size: 32px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 5px;
+        }
+
+        .logo-image {
+            max-width: 120px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .company-name {
+            color: #800020;
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .company-details {
+            color: #555;
+            font-size: 11px;
+            line-height: 1.6;
+            margin-top: 10px;
+        }
+
+        .certificate-title {
+            text-align: center;
+            color: #800020;
+            font-size: 24px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin: 20px 0;
+            border-top: 2px solid #800020;
+            border-bottom: 2px solid #800020;
+            padding: 12px 0;
+        }
+
+        .reference-number {
+            text-align: right;
+            color: #666;
+            font-size: 12px;
+            margin-bottom: 20px;
+        }
+
+        .content {
+            line-height: 1.8;
+            font-size: 13px;
+            color: #333;
+            text-align: justify;
+            margin: 20px 0;
+        }
+
+        .form-field {
+            display: inline-block;
+            min-width: 150px;
+            border-bottom: 1px solid #800020;
+            padding: 2px 8px;
+            margin: 0 5px;
+            font-weight: bold;
+            color: #800020;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        select {
+            border: none;
+            border-bottom: 1px solid #800020;
+            padding: 2px 8px;
+            font-family: inherit;
+            font-size: inherit;
+            min-width: 150px;
+            color: #800020;
+            font-weight: bold;
+            background: transparent;
+        }
+
+        select {
+            cursor: pointer;
+        }
+
+        input[type="text"]:focus,
+        input[type="date"]:focus,
+        select:focus {
+            outline: none;
+            background-color: #fff5f5;
+        }
+
+        .signature-section {
+            margin-top: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .signature-block {
+            width: 45%;
+        }
+
+        .signature-line {
+            border-top: 2px solid #800020;
+            margin-top: 35px;
+            padding-top: 10px;
+            text-align: center;
+        }
+
+        .signature-label {
+            color: #800020;
+            font-weight: bold;
+            font-size: 12px;
+        }
+
+        .footer {
+            margin-top: 25px;
+            padding-top: 15px;
+            border-top: 2px solid #800020;
+            text-align: center;
+            font-size: 10px;
+            color: #666;
+        }
+
+        .stamp-area {
+            position: absolute;
+            right: 80px;
+            margin-top: -30px;
+            width: 120px;
+            height: 120px;
+            border: 2px dashed #ccc;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ccc;
+            font-size: 11px;
+        }
+
+        .buttons {
+            text-align: center;
+            margin: 20px 0;
+            padding: 20px;
+        }
+
+        button {
+            background-color: #800020;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin: 0 10px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #a00028;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .form-helper {
+            background-color: #fff5f5;
+            border: 1px solid #800020;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+
+        .form-helper label {
+            display: block;
+            margin-bottom: 10px;
+            color: #800020;
+            font-weight: bold;
+            font-size: 13px;
+        }
+
+        .date-toggle {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            margin-top: 5px;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .container {
+                box-shadow: none;
+                padding: 20mm 15mm;
+            }
+
+            .buttons {
+                display: none;
+            }
+
+            .form-helper {
+                display: none;
+            }
+
+            input[type="text"],
+            input[type="date"],
+            select {
+                border: none;
+                border-bottom: 1px solid #800020;
+            }
+
+            .stamp-area {
+                border: none;
+                color: transparent;
+            }
+
+            @page {
+                margin: 0;
+            }
+        }
+    </style>
+
+
+    <div class="buttons">
+        <button onclick="window.print()">Print Certificate</button>
+        <button onclick="clearForm()">Clear Form</button>
+    </div>
+
+    <div class="container">
+        <div class="form-helper">
+            <label>Employment Status:</label>
+            <div class="date-toggle">
+                <input type="radio" name="employmentStatus" id="currentEmployee" value="current" checked="">
+                <label for="currentEmployee" style="display: inline; margin: 0;">Current Employee (Still Working)</label>
+                
+                <input type="radio" name="employmentStatus" id="formerEmployee" value="former" style="margin-left: 20px;">
+                <label for="formerEmployee" style="display: inline; margin: 0;">Former Employee (No Longer Working)</label>
+            </div>
+        </div>
+
+        <div class="header">
+            <img src="https://osusproperties.com/images/osus.png" alt="OSUS Logo" class="logo-image" loading="lazy">
+            <div class="company-name">OSUS REAL ESTATE BROKERAGE LLC</div>
+            <div class="company-details">
+                Single Business Tower, 29th Floor, Business Bay<br>
+                00000 Dubai, United Arab Emirates<br>
+                VAT: 100236589600003
+            </div>
+        </div>
+
+        <div class="reference-number">
+            Ref No: OSUS/HR/<input type="text" id="refNumber" style="width: 100px;" placeholder="2024/XXX">
+        </div>
+
+        <div class="certificate-title">
+            Employment Certificate
+        </div>
+
+        <div class="content">
+            <p style="margin-bottom: 20px;">
+                <strong>Date:</strong> <input type="date" id="issueDate" style="width: 200px;">
+            </p>
+
+            <p style="margin-bottom: 15px;">
+                <strong>To Whom It May Concern,</strong>
+            </p>
+
+            <p style="margin-bottom: 15px;" id="para1">
+                This is to certify that <strong><input type="text" id="employeeName" placeholder="Employee Full Name" style="min-width: 300px;"></strong>, 
+                holder of Passport Number <input type="text" id="passportNumber" placeholder="Passport No." style="width: 150px;">, 
+                <span id="employmentVerb">is currently employed</span> with OSUS Real Estate Brokerage LLC as a <input type="text" id="position" placeholder="Position/Designation" style="min-width: 250px;">.
+            </p>
+
+            <p style="margin-bottom: 15px;" id="para2">
+                <input type="text" id="employeeNamePronoum" placeholder="Mr./Ms. [Last Name]" style="width: 150px;"> 
+                <span id="dateRange">joined our organization on <input type="date" id="joinDate" style="width: 180px;"> 
+                and <span id="endDateSection">is currently working with us in a professional capacity</span></span>.
+            </p>
+
+            <p style="margin-bottom: 15px;" id="para3">
+                During <span id="tenureText">the tenure</span> with OSUS Real Estate Brokerage LLC, <input type="text" id="employeeNameShort" placeholder="Mr./Ms. [Last Name]" style="width: 150px;"> 
+                <span id="performanceVerb">has demonstrated</span> professionalism, dedication, and commitment to assigned responsibilities.
+            </p>
+
+            <p style="margin-bottom: 15px;" id="para4">
+                The <span id="salaryPrefix">current</span> gross monthly salary <span id="salaryVerb">is</span> AED <input type="text" id="salary" placeholder="XX,XXX" style="width: 120px;">.
+            </p>
+
+            <p style="margin-bottom: 15px;" id="para5" class="hidden">
+                The employment <span id="terminationText">was terminated on 
+                <input type="text" id="terminationReason" placeholder="mutual agreement/resignation/completion of contract" style="min-width: 350px;"></span> 
+                and <input type="text" id="employeeNameTermination" placeholder="Mr./Ms. [Last Name]" style="width: 150px;"> 
+                left the organization in good standing.
+            </p>
+
+            <p style="margin-bottom: 15px;" id="para6">
+                This certificate is issued upon the request of the <span id="employeeType">employee</span> for 
+                <input type="text" id="purpose" placeholder="visa/bank/official purposes" style="min-width: 300px;"> 
+                without any liability or obligation on the part of OSUS Real Estate Brokerage LLC.
+            </p>
+
+            <p style="margin-bottom: 20px;">
+                We wish <input type="text" id="employeeNameFinal" placeholder="Mr./Ms. [Last Name]" style="width: 150px;"> 
+                all the best in future endeavors.
+            </p>
+        </div>
+
+        <div class="signature-section">
+            <div class="signature-block">
+                <div class="signature-line">
+                    <div class="signature-label">Authorized Signatory</div>
+                    <div style="color: #666; font-size: 11px; margin-top: 5px;">
+                        <input type="text" id="signatoryName" placeholder="Name" style="width: 100%; text-align: center; font-size: 11px;">
+                    </div>
+                    <div style="color: #666; font-size: 11px;">
+                        <input type="text" id="signatoryTitle" placeholder="Title/Position" style="width: 100%; text-align: center; font-size: 11px;">
+                    </div>
+                </div>
+            </div>
+            <div style="position: relative;">
+                <div class="stamp-area">Company Stamp</div>
+            </div>
+        </div>
+
+        <div class="footer">
+            This is a computer-generated certificate and is valid without signature if issued electronically.<br>
+            For verification, please contact HR Department at hr@osusproperties.com
+        </div>
+    </div>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        // Handle employment status toggle
+        document.querySelectorAll('input[name="employmentStatus"]').forEach(radio => {
+            radio.addEventListener('change', function() {
+                updateCertificateContent();
+            });
+        });
+
+        function updateCertificateContent() {
+            const isCurrent = document.getElementById('currentEmployee').checked;
+            
+            if (isCurrent) {
+                // Current employee text
+                document.getElementById('employmentVerb').textContent = 'is currently employed';
+                document.getElementById('endDateSection').innerHTML = 'and continues to work with us to <strong style="color: #800020;">Present</strong>';
+                document.getElementById('tenureText').textContent = 'the tenure';
+                document.getElementById('performanceVerb').textContent = 'has demonstrated';
+                document.getElementById('salaryPrefix').textContent = 'current';
+                document.getElementById('salaryVerb').textContent = 'is';
+                document.getElementById('employeeType').textContent = 'employee';
+                document.getElementById('para5').classList.add('hidden');
+            } else {
+                // Former employee text
+                document.getElementById('employmentVerb').textContent = 'was employed';
+                document.getElementById('endDateSection').innerHTML = 'and completed employment with us on <input type="date" id="endDate" style="width: 180px;">';
+                document.getElementById('tenureText').textContent = 'their tenure';
+                document.getElementById('performanceVerb').textContent = 'demonstrated';
+                document.getElementById('salaryPrefix').textContent = 'last';
+                document.getElementById('salaryVerb').textContent = 'was';
+                document.getElementById('employeeType').textContent = 'former employee';
+                document.getElementById('para5').classList.remove('hidden');
+                
+                // Restore end date value if it exists
+                const savedEndDate = localStorage.getItem('osus_endDate');
+                if (savedEndDate && document.getElementById('endDate')) {
+                    document.getElementById('endDate').value = savedEndDate;
+                }
+                
+                // Add event listener for end date
+                setTimeout(() => {
+                    const endDateInput = document.getElementById('endDate');
+                    if (endDateInput) {
+                        endDateInput.addEventListener('input', () => {
+                            localStorage.setItem('osus_endDate', endDateInput.value);
+                        });
+                    }
+                }, 100);
+            }
+            
+            saveFormData();
+        }
+
+        // Auto-fill employee name in all fields when first field is filled
+        document.getElementById('employeeName').addEventListener('input', function() {
+            const fullName = this.value;
+            if (fullName) {
+                const nameParts = fullName.trim().split(' ');
+                const lastName = nameParts[nameParts.length - 1];
+                const title = 'Mr./Ms. ' + lastName;
+                
+                // Only auto-fill if the other fields are empty
+                if (!document.getElementById('employeeNamePronoum').value) {
+                    document.getElementById('employeeNamePronoum').value = title;
+                }
+                if (!document.getElementById('employeeNameShort').value) {
+                    document.getElementById('employeeNameShort').value = title;
+                }
+                if (!document.getElementById('employeeNameFinal').value) {
+                    document.getElementById('employeeNameFinal').value = title;
+                }
+                const terminationField = document.getElementById('employeeNameTermination');
+                if (terminationField && !terminationField.value) {
+                    terminationField.value = title;
+                }
+            }
+        });
+
+        // Set today's date by default
+        document.getElementById('issueDate').valueAsDate = new Date();
+
+        function clearForm() {
+            if (confirm('Are you sure you want to clear all fields?')) {
+                document.querySelectorAll('input[type="text"], input[type="date"]').forEach(input => {
+                    input.value = '';
+                });
+                document.getElementById('issueDate').valueAsDate = new Date();
+                document.getElementById('currentEmployee').checked = true;
+                updateCertificateContent();
+                localStorage.removeItem('osusEmploymentCertDynamic');
+                localStorage.removeItem('osus_endDate');
+            }
+        }
+
+        // Save form data to localStorage
+        function saveFormData() {
+            const formData = {
+                employmentStatus: document.querySelector('input[name="employmentStatus"]:checked').value
+            };
+            
+            document.querySelectorAll('input[type="text"], input[type="date"]').forEach(input => {
+                if (input.id) {
+                    formData[input.id] = input.value;
+                }
+            });
+            
+            localStorage.setItem('osusEmploymentCertDynamic', JSON.stringify(formData));
+        }
+
+        // Load form data from localStorage
+        function loadFormData() {
+            const savedData = localStorage.getItem('osusEmploymentCertDynamic');
+            if (savedData) {
+                const formData = JSON.parse(savedData);
+                
+                // Set employment status
+                if (formData.employmentStatus === 'former') {
+                    document.getElementById('formerEmployee').checked = true;
+                } else {
+                    document.getElementById('currentEmployee').checked = true;
+                }
+                
+                updateCertificateContent();
+                
+                // Restore other fields
+                Object.keys(formData).forEach(key => {
+                    if (key !== 'employmentStatus') {
+                        const input = document.getElementById(key);
+                        if (input) {
+                            input.value = formData[key];
+                        }
+                    }
+                });
+            }
+        }
+
+        // Auto-save on input
+        document.querySelectorAll('input[type="text"], input[type="date"], input[type="radio"]').forEach(input => {
+            input.addEve</script>
