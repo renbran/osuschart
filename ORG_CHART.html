@@ -902,6 +902,22 @@
             font-size: 0.8rem;
         }
 
+        .executive-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid var(--gold);
+            background: linear-gradient(135deg, var(--burgundy) 0%, var(--burgundy-dark) 100%);
+            margin: 0 auto 10px;
+        }
+
+        .executive-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
         .employee-name {
             font-weight: 600;
             font-size: 0.75rem;
@@ -1400,6 +1416,9 @@
                     <div class="executive-card founder" onclick="showModal(employees[0])">
                         <div class="executive-header">
                             <span class="executive-badge">👑 Founder</span>
+                            <div class="executive-avatar">
+                                <img src="https://i.postimg.cc/63N9sktT/Hisham.jpg" alt="HISHAM EL ASSAAD">
+                            </div>
                             <h2 class="executive-name">HISHAM EL ASSAAD</h2>
                             <p class="executive-title">Founder</p>
                         </div>
@@ -1437,6 +1456,9 @@
                     <div class="executive-card md" onclick="showModal(employees[1])">
                         <div class="executive-header">
                             <span class="executive-badge">📊 Managing Partner</span>
+                            <div class="executive-avatar">
+                                <img src="https://i.postimg.cc/NjSsDynd/AHMED-ABO-ELAZAYEM-Managing-Director.jpg" alt="AHMED ABOELAZAYEM">
+                            </div>
                             <h2 class="executive-name">AHMED ABOELAZAYEM</h2>
                             <p class="executive-title">Managing Partner</p>
                         </div>
