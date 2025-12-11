@@ -1029,13 +1029,7 @@
         }
 
         function getTitle(type) {
-            const titles = {
-                partner: 'PARTNER APPOINTMENT LETTER',
-                director: 'PROMOTION LETTER',
-                manager: 'APPOINTMENT LETTER',
-                lead: 'TEAM LEAD APPOINTMENT LETTER'
-            };
-            return titles[type] || 'APPOINTMENT LETTER';
+            return 'APPOINTMENT LETTER';
         }
 
         function getBody(emp, effDate) {
