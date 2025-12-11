@@ -3,30 +3,167 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OSUS PROPERTIES Brokerage LLC</title>
-    <meta http-equiv="refresh" content="0; url=ORG_CHART.html">
+    <title>OSUS PROPERTIES Brokerage LLC - Documents</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --burgundy: #800020;
+            --burgundy-dark: #5C0018;
+            --gold: #D4AF37;
+            --gold-light: #E8CC6E;
+            --gold-cream: #FDF8EC;
+            --white: #FFFFFF;
+        }
+
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
             min-height: 100vh;
-            margin: 0;
-            background: linear-gradient(135deg, #800020 0%, #5C0018 100%);
-            color: white;
+            background: linear-gradient(180deg, #FFFEF9 0%, var(--gold-cream) 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
         }
-        a {
-            color: #D4AF37;
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .logo {
+            width: 100px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--burgundy);
+            margin-bottom: 10px;
+        }
+
+        .tagline {
+            color: #6A4050;
+            font-size: 1rem;
+            margin-bottom: 50px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .card {
+            background: var(--white);
+            border: 2px solid var(--gold);
+            border-radius: 16px;
+            padding: 35px 30px;
             text-decoration: none;
-            font-weight: 600;
+            color: inherit;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(128, 0, 32, 0.08);
         }
-        a:hover {
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(128, 0, 32, 0.15);
+            border-color: var(--burgundy);
+        }
+
+        .card-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .card h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: var(--burgundy);
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: #6A4050;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .card-badge {
+            display: inline-block;
+            background: var(--burgundy);
+            color: var(--white);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-top: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .footer {
+            margin-top: 60px;
+            color: #6A4050;
+            font-size: 0.85rem;
+        }
+
+        .footer a {
+            color: var(--burgundy);
+            text-decoration: none;
+        }
+
+        .footer a:hover {
             text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            .cards {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
-    <p>Redirecting to <a href="ORG_CHART.html">Organizational Chart</a>...</p>
+    <div class="container">
+        <img src="https://osusproperties.com/images/osus.png" alt="OSUS Properties" class="logo">
+        <h1>OSUS Properties Brokerage LLC</h1>
+        <p class="tagline">Excellence in Real Estate | Dubai, UAE</p>
+
+        <div class="cards">
+            <a href="ORG_CHART.html" class="card">
+                <div class="card-icon">🏢</div>
+                <h2>Organizational Chart</h2>
+                <p>View the complete organizational structure for 2025, including all departments, teams, and leadership hierarchy.</p>
+                <span class="card-badge">Interactive Chart</span>
+            </a>
+
+            <a href="Professional Recogniton Letter.html" class="card">
+                <div class="card-icon">📜</div>
+                <h2>Recognition Letters</h2>
+                <p>Generate professional growth recognition letters for partners, directors, managers, and team leads.</p>
+                <span class="card-badge">Print Ready</span>
+            </a>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2025 OSUS Properties Brokerage LLC. All rights reserved.</p>
+            <p><a href="https://osusproperties.com" target="_blank" rel="noopener">www.osusproperties.com</a></p>
+        </div>
+    </div>
 </body>
 </html>
