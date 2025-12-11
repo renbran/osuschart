@@ -1653,6 +1653,14 @@
             {name: "RENBRAN ANTHONY MADELO", department: "FOUNDER'S OFFICE", position: "JUNIOR PARTNER PERFORMANCE METRIC ANALYST", reportsTo: "HISHAM EL ASSAAD", coach: "HISHAM EL ASSAAD", image: "https://i.postimg.cc/8cJJcBQv/RENBRAN-ANTHONY-MADELO-JUNIOR-PARTNER-PERFORMANCE-METRIC-ANALYST.png"}
         ];
 
+        // Ensure everyone has an image — use provided Postimg logo for missing photos
+        (function applyDefaultLogo(){
+            const defaultLogo = 'https://i.postimg.cc/TRhhbb1Y/osus-(1).png';
+            for (let i = 0; i < employees.length; i++) {
+                if (!employees[i].image) employees[i].image = defaultLogo;
+            }
+        })();
+
         // Department Configuration
         const deptConfig = {
             "PRIMARY DEPARTMENT": {icon: "🏠", desc: "Primary Sales Team", reportsTo: "Managing Partner"},
