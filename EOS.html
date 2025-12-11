@@ -30,7 +30,6 @@
             align-items: center;
             justify-content: space-between;
             flex-wrap: wrap;
-            gap: 10px;
         }
         .nav-brand {
             display: flex;
@@ -38,6 +37,7 @@
             gap: 10px;
             text-decoration: none;
             color: white;
+            z-index: 1001;
         }
         .nav-brand img {
             height: 36px;
@@ -46,6 +46,32 @@
             font-family: 'Inter', sans-serif;
             font-weight: 600;
             font-size: 1rem;
+        }
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 4px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            z-index: 1001;
+        }
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: #D4AF37;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
         }
         .nav-links {
             display: flex;
@@ -70,8 +96,34 @@
             color: #5C0018;
         }
         @media (max-width: 768px) {
-            .nav-container { flex-direction: column; }
-            .nav-links { justify-content: center; }
+            .hamburger {
+                display: flex;
+            }
+            .nav-links {
+                position: fixed;
+                top: 60px;
+                left: 0;
+                right: 0;
+                background: linear-gradient(135deg, #800020 0%, #5C0018 100%);
+                flex-direction: column;
+                padding: 20px;
+                gap: 10px;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+                max-height: 0;
+                overflow: hidden;
+                opacity: 0;
+                transition: all 0.3s ease;
+            }
+            .nav-links.active {
+                max-height: 500px;
+                opacity: 1;
+            }
+            .nav-links a {
+                width: 100%;
+                text-align: center;
+                padding: 12px;
+                font-size: 0.9rem;
+            }
         }
         @media print {
             .nav-menu { display: none !important; }
@@ -1153,7 +1205,12 @@
                 <img src="https://osusproperties.com/images/osus.png" alt="OSUS">
                 <span>OSUS Properties</span>
             </a>
-            <div class="nav-links">
+            <button class="hamburger" onclick="toggleMenu()" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-links" id="navLinks">
                 <a href="index.html">🏠 Home</a>
                 <a href="ORG_CHART.html">🏢 Org Chart</a>
                 <a href="Professional Recogniton Letter.html">📜 Recognition</a>
@@ -1999,6 +2056,36 @@
                 document.getElementById('validationError').style.display = 'none';
             }
         }
+
+        // Mobile Navigation Toggle
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            const hamburger = document.querySelector('.hamburger');
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        }
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const navMenu = document.querySelector('.nav-menu');
+            const navLinks = document.getElementById('navLinks');
+            const hamburger = document.querySelector('.hamburger');
+
+            if (!navMenu.contains(event.target) && navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+                hamburger.classList.remove('active');
+            }
+        });
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function() {
+                const navLinks = document.getElementById('navLinks');
+                const hamburger = document.querySelector('.hamburger');
+                navLinks.classList.remove('active');
+                hamburger.classList.remove('active');
+            });
+        });
     </script>
 </body>
 </html>
