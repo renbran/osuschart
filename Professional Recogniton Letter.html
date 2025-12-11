@@ -996,21 +996,6 @@
             renderList();
         }
 
-        // Password protection for signature
-        document.getElementById('signaturePassword').addEventListener('input', function(e) {
-            const correctPassword = 'OSUS2025'; // Change this to your secure password
-            const checkbox = document.getElementById('showSignature');
-            if (e.target.value === correctPassword) {
-                checkbox.disabled = false;
-                checkbox.checked = true;
-                e.target.style.borderColor = 'green';
-            } else {
-                checkbox.disabled = true;
-                checkbox.checked = false;
-                e.target.style.borderColor = '';
-            }
-        });
-
         function toggleSelect(name) {
             if (selected.has(name)) {
                 selected.delete(name);
@@ -1170,7 +1155,7 @@
 
         function generateLetters() {
             if (selected.size === 0) {
-                alert('Please select at least one employee.');
+                alert('⚠️ Please select at least one employee to generate letters.');
                 return;
             }
             
@@ -1187,11 +1172,16 @@
 
         function printLetters() {
             if (selected.size === 0) {
-                alert('Please generate letters first.');
+                alert('⚠️ Please select employees and generate letters first.');
                 return;
             }
-            generateLetters();
-            setTimeout(() => window.print(), 300);
+            
+            const lettersOutput = document.getElementById('lettersOutput');
+            if (!lettersOutput.innerHTML.trim()) {
+                generateLetters();
+            }
+            
+            setTimeout(() => window.print(), 500);
         }
 
         // Mobile Navigation Toggle
@@ -1222,6 +1212,43 @@
                 navLinks.classList.remove('active');
                 hamburger.classList.remove('active');
             });
+        });
+
+        // Initialize page when DOM is ready
+        document.addEventListener('DOMContentLoaded', function() {
+            // Populate department filter
+            const depts = [...new Set(employees.map(e => e.dept))].sort();
+            const deptFilter = document.getElementById('deptFilter');
+            depts.forEach(dept => {
+                const option = document.createElement('option');
+                option.value = dept;
+                option.textContent = dept;
+                deptFilter.appendChild(option);
+            });
+
+            // Password protection for signature
+            const passwordInput = document.getElementById('signaturePassword');
+            const signatureCheckbox = document.getElementById('showSignature');
+            
+            if (passwordInput && signatureCheckbox) {
+                passwordInput.addEventListener('input', function(e) {
+                    const correctPassword = 'OSUS2025';
+                    if (e.target.value === correctPassword) {
+                        signatureCheckbox.disabled = false;
+                        signatureCheckbox.checked = true;
+                        e.target.style.borderColor = 'green';
+                        e.target.style.borderWidth = '2px';
+                    } else {
+                        signatureCheckbox.disabled = true;
+                        signatureCheckbox.checked = false;
+                        e.target.style.borderColor = '';
+                        e.target.style.borderWidth = '';
+                    }
+                });
+            }
+
+            // Initial render
+            renderList();
         });
     </script>
 
