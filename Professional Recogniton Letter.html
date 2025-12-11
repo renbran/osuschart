@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OSUS Properties - Professional Growth Recognition Letters</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --burgundy: #800020;
+            --burgundy-dark: #5C0018;
+            --gold: #D4AF37;
+            --gold-light: #E8CC6E;
+            --gold-cream: #FDF8EC;
+            --white: #FFFFFF;
+            --text-dark: #1A0A10;
+            --text-medium: #4A2030;
+            --shadow-md: 0 4px 12px rgba(128, 0, 32, 0.12);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(180deg, #FFFEF9 0%, var(--gold-cream) 100%);
+            min-height: 100vh;
+            color: var(--text-dark);
+        }
+
+        /* ==================== CONTROL PANEL (Screen Only) ==================== */
+        .control-panel {
+            background: linear-gradient(135deg, var(--burgundy) 0%, var(--burgundy-dark) 100%);
+            color: var(--white);
+            padding: 25px 30px;
+            border-bottom: 4px solid var(--gold);
+        }
+
+        .control-header {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .control-title {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .control-title img {
+            width: 60px;
+        }
+
+        .control-title h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+        }
+
+        .control-title p {
+            font-size: 0.8rem;
+            color: var(--gold-light);
+            margin-top: 3px;
+        }
+
+        .control-actions {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 10px 20px;
+            border: 2px solid transparent;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-gold {
+            background: var(--gold);
+            color: var(--burgundy-dark);
+        }
+
+        .btn-gold:hover {
+            background: var(--gold-light);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--white);
+            border-color: var(--gold);
+        }
+
+        .btn-outline:hover {
+            background: rgba(212, 175, 55, 0.15);
+        }
+
+        /* ==================== SETTINGS PANEL ==================== */
+        .settings-panel {
+            max-width: 1400px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        .settings-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 20px;
+        }
+
+        .settings-box {
+            background: var(--white);
+            border: 2px solid var(--gold);
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .settings-box h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--burgundy);
+            font-size: 1rem;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--gold);
+        }
+
+        .form-row {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 12px;
+        }
+
+        .form-group {
+            flex: 1;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: var(--burgundy);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 5px;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 8px 12px;
+            border: 2px solid var(--gold);
+            border-radius: 6px;
+            font-size: 0.85rem;
+            background: var(--gold-cream);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--burgundy);
+        }
+
+        /* Employee List */
+        .employee-list-container {
+            max-height: 350px;
+            overflow-y: auto;
+            border: 1px solid var(--gold);
+            border-radius: 6px;
+        }
+
+        .employee-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 15px;
+            border-bottom: 1px solid var(--gold-cream);
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .employee-item:hover {
+            background: var(--gold-cream);
+        }
+
+        .employee-item input {
+            width: 18px;
+            height: 18px;
+            accent-color: var(--burgundy);
+        }
+
+        .employee-item .info {
+            flex: 1;
+        }
+
+        .employee-item .name {
+            font-weight: 600;
+            color: var(--burgundy);
+            font-size: 0.85rem;
+        }
+
+        .employee-item .position {
+            font-size: 0.7rem;
+            color: var(--text-medium);
+        }
+
+        .employee-item .type-badge {
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 0.65rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .type-badge.partner { background: var(--burgundy); color: white; }
+        .type-badge.director { background: var(--burgundy-dark); color: white; }
+        .type-badge.manager { background: var(--gold); color: var(--burgundy-dark); }
+        .type-badge.lead { background: var(--gold-light); color: var(--burgundy-dark); }
+
+        .list-actions {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .list-actions button {
+            padding: 6px 12px;
+            font-size: 0.75rem;
+            background: var(--burgundy);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .stats-mini {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 2px solid var(--gold);
+        }
+
+        .stat-mini {
+            text-align: center;
+        }
+
+        .stat-mini .num {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--burgundy);
+            font-weight: 700;
+        }
+
+        .stat-mini .lbl {
+            font-size: 0.65rem;
+            color: var(--text-medium);
+            text-transform: uppercase;
+        }
+
+        /* ==================== LETTERS CONTAINER ==================== */
+        .letters-container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .letters-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .letters-header h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--burgundy);
+        }
+
+        .letters-count {
+            color: var(--text-medium);
+            font-size: 0.9rem;
+        }
+
+        /* ==================== SINGLE PAGE LETTER ==================== */
+        .letter-page {
+            width: 210mm;
+            min-height: 297mm;
+            max-height: 297mm;
+            background: white;
+            margin: 0 auto 30px;
+            box-shadow: var(--shadow-md);
+            overflow: hidden;
+            position: relative;
+            page-break-after: always;
+            page-break-inside: avoid;
+        }
+
+        .letter-content {
+            padding: 15mm 20mm 20mm 20mm;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            font-size: 11pt;
+            line-height: 1.5;
+        }
+
+        /* Letter Header */
+        .ltr-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding-bottom: 12px;
+            border-bottom: 3px solid var(--burgundy);
+            margin-bottom: 15px;
+        }
+
+        .ltr-logo-section {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .ltr-logo {
+            width: 50px;
+            height: auto;
+        }
+
+        .ltr-company h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 14pt;
+            color: var(--burgundy);
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .ltr-company p {
+            font-size: 8pt;
+            color: var(--text-medium);
+            margin: 2px 0 0 0;
+        }
+
+        .ltr-ref {
+            text-align: right;
+            font-size: 8pt;
+            color: var(--text-medium);
+        }
+
+        .ltr-ref .ref-num {
+            font-weight: 700;
+            color: var(--burgundy);
+            font-size: 9pt;
+        }
+
+        /* Letter Title */
+        .ltr-title {
+            background: var(--burgundy);
+            color: white;
+            text-align: center;
+            padding: 10px 20px;
+            margin: 10px 0 15px 0;
+        }
+
+        .ltr-title h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 13pt;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin: 0;
+        }
+
+        /* Date & Recipient */
+        .ltr-date {
+            font-size: 10pt;
+            margin-bottom: 12px;
+        }
+
+        .ltr-recipient {
+            margin-bottom: 15px;
+        }
+
+        .ltr-recipient .dear {
+            font-size: 10pt;
+            margin-bottom: 3px;
+        }
+
+        .ltr-recipient .name {
+            font-family: 'Playfair Display', serif;
+            font-size: 13pt;
+            color: var(--burgundy);
+            font-weight: 700;
+        }
+
+        /* Letter Body */
+        .ltr-body {
+            flex: 1;
+            font-size: 10pt;
+            text-align: justify;
+        }
+
+        .ltr-body p {
+            margin-bottom: 10px;
+        }
+
+        .ltr-position-box {
+            background: var(--gold-cream);
+            border: 2px solid var(--gold);
+            border-left: 4px solid var(--burgundy);
+            padding: 10px 15px;
+            margin: 12px 0;
+        }
+
+        .ltr-position-box .label {
+            font-size: 7pt;
+            font-weight: 700;
+            color: var(--burgundy);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 3px;
+        }
+
+        .ltr-position-box .value {
+            font-family: 'Playfair Display', serif;
+            font-size: 12pt;
+            color: var(--burgundy);
+            font-weight: 700;
+        }
+
+        .ltr-effective {
+            display: inline-block;
+            background: var(--burgundy);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 3px;
+            font-size: 9pt;
+            font-weight: 600;
+            margin: 8px 0;
+        }
+
+        .ltr-congrats {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 12pt;
+            color: var(--burgundy);
+            font-style: italic;
+            margin: 15px 0;
+            padding: 10px;
+            border-top: 1px solid var(--gold);
+            border-bottom: 1px solid var(--gold);
+        }
+
+        /* Signature Section */
+        .ltr-closing {
+            margin-top: auto;
+            padding-top: 10px;
+        }
+
+        .ltr-closing .sincerely {
+            font-size: 10pt;
+            margin-bottom: 35px;
+        }
+
+        .ltr-signature-area {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .ltr-signature {
+            min-width: 200px;
+        }
+
+        .ltr-signature .sig-line {
+            border-top: 2px solid var(--burgundy);
+            padding-top: 8px;
+        }
+
+        .ltr-signature .sig-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 11pt;
+            font-weight: 700;
+            color: var(--burgundy);
+        }
+
+        .ltr-signature .sig-title {
+            font-size: 9pt;
+            color: var(--text-medium);
+        }
+
+        .ltr-seal-area {
+            text-align: center;
+            min-width: 100px;
+        }
+
+        .ltr-seal {
+            width: 70px;
+            height: 70px;
+            border: 3px solid var(--burgundy);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            font-size: 7pt;
+            color: var(--burgundy);
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .ltr-seal-label {
+            font-size: 7pt;
+            color: var(--text-medium);
+            margin-top: 5px;
+        }
+
+        /* Footer */
+        .ltr-footer {
+            margin-top: 15px;
+            padding-top: 10px;
+            border-top: 2px solid var(--gold);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 7pt;
+            color: var(--text-medium);
+        }
+
+        .ltr-footer-left span {
+            display: block;
+        }
+
+        .ltr-confidential {
+            background: var(--burgundy);
+            color: white;
+            padding: 3px 10px;
+            font-weight: 700;
+            font-size: 7pt;
+            letter-spacing: 0.5px;
+        }
+
+        .ltr-page-num {
+            font-size: 8pt;
+            color: var(--text-medium);
+        }
+
+        /* ==================== PRINT STYLES ==================== */
+        @media print {
+            @page {
+                size: A4;
+                margin: 0;
+            }
+
+            html, body {
+                width: 210mm;
+                height: 297mm;
+                margin: 0;
+                padding: 0;
+                background: white;
+            }
+
+            .control-panel,
+            .settings-panel,
+            .letters-header,
+            .no-print {
+                display: none !important;
+            }
+
+            .letters-container {
+                max-width: 100%;
+                margin: 0;
+                padding: 0;
+            }
+
+            .letter-page {
+                width: 210mm;
+                height: 297mm;
+                min-height: 297mm;
+                max-height: 297mm;
+                margin: 0;
+                padding: 0;
+                box-shadow: none;
+                page-break-after: always;
+                page-break-inside: avoid;
+                break-after: page;
+                break-inside: avoid;
+            }
+
+            .letter-page:last-child {
+                page-break-after: auto;
+            }
+
+            .letter-content {
+                padding: 12mm 18mm 15mm 18mm;
+            }
+
+            .ltr-header,
+            .ltr-title,
+            .ltr-position-box,
+            .ltr-effective,
+            .ltr-confidential,
+            .ltr-seal {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+        }
+
+        /* ==================== RESPONSIVE ==================== */
+        @media screen and (max-width: 900px) {
+            .letter-page {
+                width: 100%;
+                min-height: auto;
+                max-height: none;
+            }
+
+            .settings-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .control-header {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- CONTROL PANEL -->
+    <div class="control-panel no-print">
+        <div class="control-header">
+            <div class="control-title">
+                <img src="https://osusproperties.com/images/osus.png" alt="OSUS">
+                <div>
+                    <h1>Professional Growth Recognition Letters</h1>
+                    <p>Single-Page Format | Print-Ready | Bulk Generation</p>
+                </div>
+            </div>
+            <div class="control-actions">
+                <button class="btn btn-outline" onclick="selectAll()">☑ Select All</button>
+                <button class="btn btn-outline" onclick="deselectAll()">☐ Clear All</button>
+                <button class="btn btn-gold" onclick="generateLetters()">📄 Generate Letters</button>
+                <button class="btn btn-gold" onclick="printLetters()">🖨️ Print All</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- SETTINGS PANEL -->
+    <div class="settings-panel no-print">
+        <div class="settings-grid">
+            <!-- Left: Settings -->
+            <div class="settings-box">
+                <h3>📋 Document Settings</h3>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Letter Date</label>
+                        <input type="date" id="letterDate" value="2025-12-12">
+                    </div>
+                    <div class="form-group">
+                        <label>Effective Date</label>
+                        <input type="date" id="effectiveDate" value="2025-01-01">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Filter by Type</label>
+                        <select id="typeFilter" onchange="filterList()">
+                            <option value="all">All Types</option>
+                            <option value="partner">Partners Only</option>
+                            <option value="director">Directors Only</option>
+                            <option value="manager">Managers Only</option>
+                            <option value="lead">Team Leads Only</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Filter by Department</label>
+                        <select id="deptFilter" onchange="filterList()">
+                            <option value="all">All Departments</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="stats-mini">
+                    <div class="stat-mini">
+                        <div class="num" id="totalCount">0</div>
+                        <div class="lbl">Total</div>
+                    </div>
+                    <div class="stat-mini">
+                        <div class="num" id="selectedCount">0</div>
+                        <div class="lbl">Selected</div>
+                    </div>
+                    <div class="stat-mini">
+                        <div class="num" id="partnerCount">0</div>
+                        <div class="lbl">Partners</div>
+                    </div>
+                    <div class="stat-mini">
+                        <div class="num" id="managerCount">0</div>
+                        <div class="lbl">Managers</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Employee List -->
+            <div class="settings-box">
+                <h3>👥 Select Employees</h3>
+                <div class="list-actions">
+                    <button onclick="selectAll()">Select All Visible</button>
+                    <button onclick="deselectAll()">Deselect All</button>
+                    <button onclick="selectPartners()">Partners Only</button>
+                </div>
+                <div class="employee-list-container" id="employeeList"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- LETTERS CONTAINER -->
+    <div class="letters-container">
+        <div class="letters-header no-print">
+            <h2>📄 Generated Letters</h2>
+            <span class="letters-count">Showing <strong id="letterCount">0</strong> letters</span>
+        </div>
+        <div id="lettersOutput"></div>
+    </div>
+
+    <script>
+        // Employee Data
+        const employees = [
+            // Partners
+            {name: "FARAAZ ARIF", position: "Senior Partner Primary Sales", dept: "Primary Department", type: "partner"},
+            {name: "ADNAN ARIF", position: "Associate Partner Primary Sales", dept: "Primary Department", type: "partner"},
+            {name: "AHMAD WALID", position: "Associate Partner Primary Sales", dept: "Primary Department", type: "partner"},
+            {name: "ALISAR AL NAJDI", position: "Associate Partner Primary Sales", dept: "Primary Department", type: "partner"},
+            {name: "ELDAR BUNIATAU", position: "Associate Partner Primary Sales", dept: "Primary Department", type: "partner"},
+            {name: "KHAOULA BOUTOUIL", position: "Associate Partner Primary Sales", dept: "Primary Department", type: "partner"},
+            {name: "RADWA AHMED", position: "Associate Partner Primary Sales", dept: "Primary Department", type: "partner"},
+            {name: "KARIM EL SABAGH", position: "Junior Partner Primary Sales", dept: "Primary Department", type: "partner"},
+            {name: "MAICKEL FARAGALLA", position: "Associate Partner Secondary Sales", dept: "Secondary Department", type: "partner"},
+            {name: "SETAREH TOFIGHI", position: "Senior Partner Exclusive Sales", dept: "Strategic Project", type: "partner"},
+            {name: "HAGAR MOHAMMAD", position: "Associate Partner Exclusive Sales", dept: "Strategic Project", type: "partner"},
+            {name: "LERBI LEGISI", position: "Associate Partner Exclusive Sales", dept: "Strategic Project", type: "partner"},
+            {name: "MEHDI MOFIDI", position: "Associate Partner Exclusive Sales", dept: "Strategic Project", type: "partner"},
+            {name: "SINA SAEEDI", position: "Associate Partner Exclusive Sales", dept: "Strategic Project", type: "partner"},
+            {name: "WESSAM SIMON", position: "Associate Partner Exclusive Sales", dept: "Strategic Project", type: "partner"},
+            {name: "JEROME PADILLA", position: "Junior Partner Administrator", dept: "Operation & Support", type: "partner"},
+            {name: "RENBRAN ANTHONY MADELO", position: "Junior Partner Performance Metric Analyst", dept: "Founder's Office", type: "partner"},
+            
+            // Directors
+            {name: "MOHAMED ALI ZAYANI", position: "Associate Director Primary II Sales", dept: "Primary II Department", type: "director"},
+            {name: "MOHAMMAD YAGHMOUR", position: "Associate Director Secondary Sales", dept: "Secondary Department", type: "director"},
+            {name: "ASEM KHURSHID", position: "Associate Director Portfolio Investment", dept: "Direct Reporting", type: "director"},
+            {name: "CLAUDIO PANOTA", position: "Associate Director Portfolio Investment", dept: "Direct Reporting", type: "director"},
+            {name: "AHMED WAHAB", position: "Chief Finance Officer", dept: "Finance Department", type: "director"},
+            
+            // Managers
+            {name: "AITOR SARACHO", position: "Associate Manager Primary Sales", dept: "Primary Department", type: "manager"},
+            {name: "AMANI ALTELL", position: "Associate Manager Primary Sales", dept: "Primary Department", type: "manager"},
+            {name: "ANITA AROIAN", position: "Associate Manager Primary Sales", dept: "Primary Department", type: "manager"},
+            {name: "IGOR KHOMENKO", position: "Associate Manager Primary Sales", dept: "Primary Department", type: "manager"},
+            {name: "MARIAM RAHOULI", position: "Associate Manager Primary Sales", dept: "Primary Department", type: "manager"},
+            {name: "MOHAMED NADER", position: "Associate Manager Primary Sales", dept: "Primary Department", type: "manager"},
+            {name: "STEPHANIE KEHDY", position: "Associate Manager Primary Sales", dept: "Primary Department", type: "manager"},
+            {name: "VICTORIA GADZHIEVA", position: "Associate Manager Primary Sales", dept: "Primary Department", type: "manager"},
+            {name: "VANESSA CRISTINA", position: "Associate Manager Primary Sales", dept: "Primary Department", type: "manager"},
+            {name: "ZAYED AL SHAHOOMI", position: "Associate Manager Primary Sales", dept: "Primary Department", type: "manager"},
+            {name: "PAMELA RIZKALLAH", position: "Associate Manager Primary Sales", dept: "Primary Department", type: "manager"},
+            {name: "DMYTRO ILIN", position: "Associate Manager Primary Sales", dept: "Primary Department", type: "manager"},
+            {name: "AHMAD BADAWY", position: "Associate Manager Primary Sales", dept: "Primary Department", type: "manager"},
+            {name: "MOHAMED ZAAZAA", position: "Associate Manager Primary II Sales", dept: "Primary II Department", type: "manager"},
+            {name: "MOSTAFA ABOUZID", position: "Associate Manager Primary II Sales", dept: "Primary II Department", type: "manager"},
+            {name: "AHMED AHMER", position: "Associate Manager Secondary Sales", dept: "Secondary Department", type: "manager"},
+            {name: "MARIA FAYEZ", position: "Associate Manager Secondary Sales", dept: "Secondary Department", type: "manager"},
+            {name: "MODAR MAWAS", position: "Associate Manager Secondary Sales", dept: "Secondary Department", type: "manager"},
+            {name: "RANIA SAYED", position: "Assistant Marketing Manager", dept: "Marketing Department", type: "manager"},
+            {name: "JUNAID VARDA", position: "Chief Accountant", dept: "Finance Department", type: "manager"},
+            
+            // Team Leads
+            {name: "ARLYN TABIRARA", position: "Back Office & Support Lead", dept: "Operation & Support", type: "lead"},
+        ];
+
+        let selected = new Set();
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            populateDepts();
+            renderList();
+            updateStats();
+        });
+
+        function populateDepts() {
+            const depts = [...new Set(employees.map(e => e.dept))];
+            const sel = document.getElementById('deptFilter');
+            depts.forEach(d => {
+                sel.innerHTML += `<option value="${d}">${d}</option>`;
+            });
+        }
+
+        function renderList() {
+            const typeF = document.getElementById('typeFilter').value;
+            const deptF = document.getElementById('deptFilter').value;
+            
+            let filtered = employees.filter(e => {
+                const typeMatch = typeF === 'all' || e.type === typeF;
+                const deptMatch = deptF === 'all' || e.dept === deptF;
+                return typeMatch && deptMatch;
+            });
+
+            const container = document.getElementById('employeeList');
+            container.innerHTML = filtered.map(e => `
+                <div class="employee-item" onclick="toggleSelect('${e.name}')">
+                    <input type="checkbox" ${selected.has(e.name) ? 'checked' : ''} onclick="event.stopPropagation(); toggleSelect('${e.name}')">
+                    <div class="info">
+                        <div class="name">${e.name}</div>
+                        <div class="position">${e.position} | ${e.dept}</div>
+                    </div>
+                    <span class="type-badge ${e.type}">${e.type}</span>
+                </div>
+            `).join('');
+            
+            updateStats();
+        }
+
+        function filterList() {
+            renderList();
+        }
+
+        function toggleSelect(name) {
+            if (selected.has(name)) {
+                selected.delete(name);
+            } else {
+                selected.add(name);
+            }
+            renderList();
+        }
+
+        function selectAll() {
+            const typeF = document.getElementById('typeFilter').value;
+            const deptF = document.getElementById('deptFilter').value;
+            employees.filter(e => {
+                const typeMatch = typeF === 'all' || e.type === typeF;
+                const deptMatch = deptF === 'all' || e.dept === deptF;
+                return typeMatch && deptMatch;
+            }).forEach(e => selected.add(e.name));
+            renderList();
+        }
+
+        function deselectAll() {
+            selected.clear();
+            renderList();
+        }
+
+        function selectPartners() {
+            selected.clear();
+            employees.filter(e => e.type === 'partner').forEach(e => selected.add(e.name));
+            renderList();
+        }
+
+        function updateStats() {
+            document.getElementById('totalCount').textContent = employees.length;
+            document.getElementById('selectedCount').textContent = selected.size;
+            document.getElementById('partnerCount').textContent = employees.filter(e => e.type === 'partner').length;
+            document.getElementById('managerCount').textContent = employees.filter(e => e.type === 'manager').length;
+            document.getElementById('letterCount').textContent = selected.size;
+        }
+
+        function formatDate(str) {
+            return new Date(str).toLocaleDateString('en-US', {year: 'numeric', month: 'long', day: 'numeric'});
+        }
+
+        function getTitle(type) {
+            const titles = {
+                partner: 'PARTNER APPOINTMENT LETTER',
+                director: 'PROMOTION LETTER',
+                manager: 'APPOINTMENT LETTER',
+                lead: 'TEAM LEAD APPOINTMENT LETTER'
+            };
+            return titles[type] || 'APPOINTMENT LETTER';
+        }
+
+        function getBody(emp, effDate) {
+            const t = emp.type;
+            let intro = '', body = '';
+            
+            if (t === 'partner') {
+                intro = `We are pleased to formally appoint you to the position of <strong>${emp.position}</strong> within ${emp.dept}.`;
+                body = `This appointment recognizes your outstanding contributions, leadership capabilities, and commitment to excellence. As a Partner, you will play a key role in driving strategic initiatives and mentoring team members.`;
+            } else if (t === 'director') {
+                intro = `We are pleased to announce your promotion to <strong>${emp.position}</strong> within ${emp.dept}.`;
+                body = `This promotion acknowledges your exceptional performance and strategic leadership. You will be responsible for overseeing departmental operations and contributing to organizational success.`;
+            } else if (t === 'manager') {
+                intro = `We are pleased to appoint you to the position of <strong>${emp.position}</strong> within ${emp.dept}.`;
+                body = `This appointment recognizes your consistent performance and professional growth. You will be entrusted with management responsibilities and team coordination.`;
+            } else {
+                intro = `We are pleased to appoint you to the position of <strong>${emp.position}</strong> within ${emp.dept}.`;
+                body = `This appointment recognizes your leadership abilities and dedication. You will be responsible for team coordination and operational excellence.`;
+            }
+            
+            return {intro, body};
+        }
+
+        function generateLetter(emp, idx, total) {
+            const letterDate = formatDate(document.getElementById('letterDate').value);
+            const effDate = formatDate(document.getElementById('effectiveDate').value);
+            const refNum = `OSUS/HR/${new Date().getFullYear()}/${String(idx + 1).padStart(4, '0')}`;
+            const {intro, body} = getBody(emp, effDate);
+            
+            return `
+            <div class="letter-page">
+                <div class="letter-content">
+                    <!-- Header -->
+                    <div class="ltr-header">
+                        <div class="ltr-logo-section">
+                            <img src="https://osusproperties.com/images/osus.png" class="ltr-logo" alt="OSUS">
+                            <div class="ltr-company">
+                                <h1>OSUS Properties Brokerage LLC</h1>
+                                <p>Excellence in Real Estate | Dubai, UAE</p>
+                            </div>
+                        </div>
+                        <div class="ltr-ref">
+                            <div class="ref-num">${refNum}</div>
+                            <div>Human Resources</div>
+                        </div>
+                    </div>
+
+                    <!-- Title -->
+                    <div class="ltr-title">
+                        <h2>${getTitle(emp.type)}</h2>
+                    </div>
+
+                    <!-- Date -->
+                    <div class="ltr-date"><strong>Date:</strong> ${letterDate}</div>
+
+                    <!-- Recipient -->
+                    <div class="ltr-recipient">
+                        <div class="dear">Dear</div>
+                        <div class="name">${emp.name}</div>
+                    </div>
+
+                    <!-- Body -->
+                    <div class="ltr-body">
+                        <p>${intro}</p>
+                        
+                        <div class="ltr-position-box">
+                            <div class="label">Position</div>
+                            <div class="value">${emp.position}</div>
+                        </div>
+                        
+                        <p>${body}</p>
+                        
+                        <p>This appointment is effective: <span class="ltr-effective">${effDate}</span></p>
+                        
+                        <p>Please continue to perform your duties with professionalism and dedication in line with company standards and values.</p>
+                        
+                        <div class="ltr-congrats">Congratulations on your new role!</div>
+                    </div>
+
+                    <!-- Closing -->
+                    <div class="ltr-closing">
+                        <div class="sincerely">Sincerely,</div>
+                        
+                        <div class="ltr-signature-area">
+                            <div class="ltr-signature">
+                                <div class="sig-line">
+                                    <div class="sig-name">Hisham El Assaad</div>
+                                    <div class="sig-title">Founder & CEO</div>
+                                    <div class="sig-title">OSUS Properties Brokerage LLC</div>
+                                </div>
+                            </div>
+                            <div class="ltr-seal-area">
+                                <div class="ltr-seal">COMPANY<br>SEAL</div>
+                                <div class="ltr-seal-label">Official Seal</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Footer -->
+                    <div class="ltr-footer">
+                        <div class="ltr-footer-left">
+                            <span>OSUS Properties Brokerage LLC | Dubai, UAE</span>
+                            <span>www.osusproperties.com</span>
+                        </div>
+                        <span class="ltr-confidential">CONFIDENTIAL</span>
+                        <span class="ltr-page-num">Page ${idx + 1} of ${total}</span>
+                    </div>
+                </div>
+            </div>
+            `;
+        }
+
+        function generateLetters() {
+            if (selected.size === 0) {
+                alert('Please select at least one employee.');
+                return;
+            }
+            
+            const selectedEmps = employees.filter(e => selected.has(e.name));
+            const output = document.getElementById('lettersOutput');
+            
+            output.innerHTML = selectedEmps.map((emp, i) => 
+                generateLetter(emp, i, selectedEmps.length)
+            ).join('');
+            
+            document.getElementById('letterCount').textContent = selectedEmps.length;
+            output.scrollIntoView({behavior: 'smooth'});
+        }
+
+        function printLetters() {
+            if (selected.size === 0) {
+                alert('Please generate letters first.');
+                return;
+            }
+            generateLetters();
+            setTimeout(() => window.print(), 300);
+        }
+    </script>
+
+</body>
+</html>
