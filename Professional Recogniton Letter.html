@@ -485,14 +485,17 @@
         }
 
         .ltr-signature .sig-line {
+            position: relative;
+            padding-top: 50px;
             border-top: 2px solid var(--burgundy);
-            padding-top: 8px;
         }
 
         .ltr-signature .sig-image {
-            max-width: 200px;
+            position: absolute;
+            top: -10px;
+            left: 0;
+            max-width: 180px;
             height: auto;
-            margin-bottom: 5px;
             filter: brightness(0.5) contrast(2);
         }
 
@@ -514,7 +517,7 @@
         }
 
         .ltr-seal {
-            max-width: 120px;
+            max-width: 160px;
             height: auto;
             margin: 0 auto;
             display: block;
