@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OSUS REAL ESTATE BROKERAGE L.L.C - Professional Growth Recognition Letters</title>
+    <title>OSUS Properties - Professional Growth Recognition Letters</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -489,13 +489,6 @@
             padding-top: 8px;
         }
 
-        .ltr-signature .sig-image {
-            max-width: 200px;
-            height: auto;
-            margin-bottom: 5px;
-            filter: brightness(0.5) contrast(2);
-        }
-
         .ltr-signature .sig-name {
             font-family: 'Playfair Display', serif;
             font-size: 11pt;
@@ -514,10 +507,18 @@
         }
 
         .ltr-seal {
-            max-width: 120px;
-            height: auto;
+            width: 70px;
+            height: 70px;
+            border: 3px solid var(--burgundy);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             margin: 0 auto;
-            display: block;
+            font-size: 7pt;
+            color: var(--burgundy);
+            text-align: center;
+            font-weight: 700;
         }
 
         .ltr-seal-label {
@@ -667,7 +668,7 @@
         .nav-brand span {
             font-family: 'Inter', sans-serif;
             font-weight: 600;
-            font-size: 0.85rem;
+            font-size: 1rem;
         }
         .hamburger {
             display: none;
@@ -758,7 +759,7 @@
         <div class="nav-container">
             <a href="index.html" class="nav-brand">
                 <img src="https://osusproperties.com/images/osus.png" alt="OSUS">
-                <span>OSUS REAL ESTATE BROKERAGE L.L.C</span>
+                <span>OSUS Properties</span>
             </a>
             <button class="hamburger" onclick="toggleMenu()" aria-label="Toggle menu">
                 <span></span>
@@ -804,23 +805,11 @@
                 <div class="form-row">
                     <div class="form-group">
                         <label>Letter Date</label>
-                        <input type="date" id="letterDate" value="2025-10-01">
+                        <input type="date" id="letterDate" value="2025-12-12">
                     </div>
                     <div class="form-group">
                         <label>Effective Date</label>
-                        <input type="date" id="effectiveDate" value="2025-10-01">
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>Signature Access Code</label>
-                        <input type="password" id="signaturePassword" placeholder="Enter code to enable signature">
-                    </div>
-                    <div class="form-group">
-                        <label>
-                            <input type="checkbox" id="showSignature" disabled>
-                            Show Founder's Signature (Restricted)
-                        </label>
+                        <input type="date" id="effectiveDate" value="2025-01-01">
                     </div>
                 </div>
                 <div class="form-row">
@@ -899,9 +888,7 @@
             {name: "SETAREH TOFIGHI", position: "Senior Partner Exclusive Sales", dept: "Strategic Project", type: "partner"},
             {name: "HAGAR MOHAMMAD", position: "Associate Partner Exclusive Sales", dept: "Strategic Project", type: "partner"},
             {name: "LERBI LEGISI", position: "Associate Partner Exclusive Sales", dept: "Strategic Project", type: "partner"},
-            {name: "MALEKA MOHAMED AMMAR", position: "Relationship Manager Exclusive Sales", dept: "Strategic Project", type: "manager"},
             {name: "MEHDI MOFIDI", position: "Associate Partner Exclusive Sales", dept: "Strategic Project", type: "partner"},
-            {name: "OMAR MOUNIR", position: "Relationship Manager Exclusive Sales", dept: "Strategic Project", type: "manager"},
             {name: "SINA SAEEDI", position: "Associate Partner Exclusive Sales", dept: "Strategic Project", type: "partner"},
             {name: "WESSAM SIMON", position: "Associate Partner Exclusive Sales", dept: "Strategic Project", type: "partner"},
             {name: "JEROME PADILLA", position: "Junior Partner Administrator", dept: "Operation & Support", type: "partner"},
@@ -920,34 +907,24 @@
             {name: "ANITA AROIAN", position: "Associate Manager Primary Sales", dept: "Primary Department", type: "manager"},
             {name: "IGOR KHOMENKO", position: "Associate Manager Primary Sales", dept: "Primary Department", type: "manager"},
             {name: "MARIAM RAHOULI", position: "Associate Manager Primary Sales", dept: "Primary Department", type: "manager"},
+            {name: "MOHAMED NADER", position: "Associate Manager Primary Sales", dept: "Primary Department", type: "manager"},
             {name: "STEPHANIE KEHDY", position: "Associate Manager Primary Sales", dept: "Primary Department", type: "manager"},
             {name: "VICTORIA GADZHIEVA", position: "Associate Manager Primary Sales", dept: "Primary Department", type: "manager"},
             {name: "VANESSA CRISTINA", position: "Associate Manager Primary Sales", dept: "Primary Department", type: "manager"},
             {name: "ZAYED AL SHAHOOMI", position: "Associate Manager Primary Sales", dept: "Primary Department", type: "manager"},
             {name: "PAMELA RIZKALLAH", position: "Associate Manager Primary Sales", dept: "Primary Department", type: "manager"},
             {name: "DMYTRO ILIN", position: "Associate Manager Primary Sales", dept: "Primary Department", type: "manager"},
+            {name: "AHMAD BADAWY", position: "Associate Manager Primary Sales", dept: "Primary Department", type: "manager"},
             {name: "MOHAMED ZAAZAA", position: "Associate Manager Primary II Sales", dept: "Primary II Department", type: "manager"},
             {name: "MOSTAFA ABOUZID", position: "Associate Manager Primary II Sales", dept: "Primary II Department", type: "manager"},
             {name: "AHMED AHMER", position: "Associate Manager Secondary Sales", dept: "Secondary Department", type: "manager"},
             {name: "MARIA FAYEZ", position: "Associate Manager Secondary Sales", dept: "Secondary Department", type: "manager"},
             {name: "MODAR MAWAS", position: "Associate Manager Secondary Sales", dept: "Secondary Department", type: "manager"},
             {name: "RANIA SAYED", position: "Assistant Marketing Manager", dept: "Marketing Department", type: "manager"},
-            {name: "JORDAN SANTOS", position: "Marketing Visual Specialist", dept: "Marketing Department", type: "manager"},
-            {name: "ASAD ABRAHANI", position: "Graphic Design", dept: "Marketing Department", type: "manager"},
             {name: "JUNAID VARDA", position: "Chief Accountant", dept: "Finance Department", type: "manager"},
-            {name: "NAVEEN KUMAR", position: "Accountant", dept: "Finance Department", type: "manager"},
-            {name: "MOHAMMAD RAZIL", position: "Accountant", dept: "Finance Department", type: "manager"},
             
             // Team Leads
-            {name: "ARLYN TABIRARA", position: "Junior Partner Administrator / Admin Lead", dept: "Operation & Support", type: "partner"},
-            
-            // Support Staff
-            {name: "AHMED GABER", position: "Administrator", dept: "Operation & Support", type: "manager"},
-            {name: "DHANRAJ POOJARY", position: "Administrator", dept: "Operation & Support", type: "manager"},
-            {name: "JEANOR BULACON", position: "Office Assistant", dept: "Operation & Support", type: "manager"},
-            {name: "JENETTE ANGAT", position: "Senior Barista", dept: "Operation & Support", type: "manager"},
-            {name: "JEROME PADILLA", position: "Junior Partner Administrator", dept: "Operation & Support", type: "partner"},
-            {name: "TRIPTI SHETTY", position: "Administrator", dept: "Operation & Support", type: "manager"},
+            {name: "ARLYN TABIRARA", position: "Back Office & Support Lead", dept: "Operation & Support", type: "lead"},
         ];
 
         let selected = new Set();
@@ -1040,7 +1017,13 @@
         }
 
         function getTitle(type) {
-            return 'APPOINTMENT LETTER';
+            const titles = {
+                partner: 'PARTNER APPOINTMENT LETTER',
+                director: 'PROMOTION LETTER',
+                manager: 'APPOINTMENT LETTER',
+                lead: 'TEAM LEAD APPOINTMENT LETTER'
+            };
+            return titles[type] || 'APPOINTMENT LETTER';
         }
 
         function getBody(emp, effDate) {
@@ -1048,16 +1031,16 @@
             let intro = '', body = '';
             
             if (t === 'partner') {
-                intro = `We are pleased to formally appoint you to the position of <strong>${emp.position}</strong> within the ${emp.dept}.`;
-                body = `This appointment recognizes your outstanding contributions, leadership capabilities, and commitment to excellence. As a Partner, you will play a key role in driving strategic financial initiatives and mentoring team members.`;
+                intro = `We are pleased to formally appoint you to the position of <strong>${emp.position}</strong> within ${emp.dept}.`;
+                body = `This appointment recognizes your outstanding contributions, leadership capabilities, and commitment to excellence. As a Partner, you will play a key role in driving strategic initiatives and mentoring team members.`;
             } else if (t === 'director') {
-                intro = `We are pleased to announce your appointment to <strong>${emp.position}</strong> within the ${emp.dept}.`;
-                body = `This appointment acknowledges your exceptional performance, strategic leadership abilities, and consistent achievement of targets. You will be responsible for overseeing team operations and contributing significantly to the organization's continued success.`;
+                intro = `We are pleased to announce your promotion to <strong>${emp.position}</strong> within ${emp.dept}.`;
+                body = `This promotion acknowledges your exceptional performance and strategic leadership. You will be responsible for overseeing departmental operations and contributing to organizational success.`;
             } else if (t === 'manager') {
-                intro = `We are pleased to appoint you to the position of <strong>${emp.position}</strong> within the ${emp.dept}.`;
-                body = `This appointment recognizes your consistent performance, professional growth, and demonstrated leadership potential. You will be entrusted with management responsibilities and team coordination while maintaining our high standards of excellence.`;
+                intro = `We are pleased to appoint you to the position of <strong>${emp.position}</strong> within ${emp.dept}.`;
+                body = `This appointment recognizes your consistent performance and professional growth. You will be entrusted with management responsibilities and team coordination.`;
             } else {
-                intro = `We are pleased to appoint you to the position of <strong>${emp.position}</strong> within the ${emp.dept}.`;
+                intro = `We are pleased to appoint you to the position of <strong>${emp.position}</strong> within ${emp.dept}.`;
                 body = `This appointment recognizes your leadership abilities and dedication. You will be responsible for team coordination and operational excellence.`;
             }
             
@@ -1069,7 +1052,6 @@
             const effDate = formatDate(document.getElementById('effectiveDate').value);
             const refNum = `OSUS/HR/${new Date().getFullYear()}/${String(idx + 1).padStart(4, '0')}`;
             const {intro, body} = getBody(emp, effDate);
-            const showSig = document.getElementById('showSignature').checked;
             
             return `
             <div class="letter-page">
@@ -1079,8 +1061,8 @@
                         <div class="ltr-logo-section">
                             <img src="https://osusproperties.com/images/osus.png" class="ltr-logo" alt="OSUS">
                             <div class="ltr-company">
-                                <h1>OSUS REAL ESTATE BROKERAGE L.L.C</h1>
-                                <p>SINGLE BUSINESS TOWER 2901 AND 2902 | DUBAI, UAE</p>
+                                <h1>OSUS Properties Brokerage LLC</h1>
+                                <p>Excellence in Real Estate | Dubai, UAE</p>
                             </div>
                         </div>
                         <div class="ltr-ref">
@@ -1118,7 +1100,7 @@
                         
                         <p>Please continue to perform your duties with professionalism and dedication in line with company standards and values.</p>
                         
-                        <div class="ltr-congrats">Congratulations</div>
+                        <div class="ltr-congrats">Congratulations on your new role!</div>
                     </div>
 
                     <!-- Closing -->
@@ -1128,14 +1110,14 @@
                         <div class="ltr-signature-area">
                             <div class="ltr-signature">
                                 <div class="sig-line">
-                                    ${showSig ? '<img src="https://i.postimg.cc/4m0n0SHy/founder-signature.png" alt="Founder Signature" class="sig-image">' : ''}
-                                    <div class="sig-name">HISHAM EL ASSAAD</div>
-                                    <div class="sig-title">FOUNDER</div>
-                                    <div class="sig-title">OSUS REAL ESTATE BROKERAGE L.L.C</div>
+                                    <div class="sig-name">Hisham El Assaad</div>
+                                    <div class="sig-title">Founder & CEO</div>
+                                    <div class="sig-title">OSUS Properties Brokerage LLC</div>
                                 </div>
                             </div>
                             <div class="ltr-seal-area">
-                                <img src="https://i.postimg.cc/94K4qNVg/stamp.png" alt="Company Stamp" class="ltr-seal">
+                                <div class="ltr-seal">COMPANY<br>SEAL</div>
+                                <div class="ltr-seal-label">Official Seal</div>
                             </div>
                         </div>
                     </div>
@@ -1143,8 +1125,8 @@
                     <!-- Footer -->
                     <div class="ltr-footer">
                         <div class="ltr-footer-left">
-                            <span>OSUS REAL ESTATE BROKERAGE L.L.C | DUBAI, UAE</span>
-                            <span>WWW.OSUSPROPERTIES.COM</span>
+                            <span>OSUS Properties Brokerage LLC | Dubai, UAE</span>
+                            <span>www.osusproperties.com</span>
                         </div>
                         <span class="ltr-confidential">CONFIDENTIAL</span>
                         <span class="ltr-page-num">Page ${idx + 1} of ${total}</span>
@@ -1156,7 +1138,7 @@
 
         function generateLetters() {
             if (selected.size === 0) {
-                alert('⚠️ Please select at least one employee to generate letters.');
+                alert('Please select at least one employee.');
                 return;
             }
             
@@ -1173,16 +1155,11 @@
 
         function printLetters() {
             if (selected.size === 0) {
-                alert('⚠️ Please select employees and generate letters first.');
+                alert('Please generate letters first.');
                 return;
             }
-            
-            const lettersOutput = document.getElementById('lettersOutput');
-            if (!lettersOutput.innerHTML.trim()) {
-                generateLetters();
-            }
-            
-            setTimeout(() => window.print(), 500);
+            generateLetters();
+            setTimeout(() => window.print(), 300);
         }
 
         // Mobile Navigation Toggle
@@ -1213,43 +1190,6 @@
                 navLinks.classList.remove('active');
                 hamburger.classList.remove('active');
             });
-        });
-
-        // Initialize page when DOM is ready
-        document.addEventListener('DOMContentLoaded', function() {
-            // Populate department filter
-            const depts = [...new Set(employees.map(e => e.dept))].sort();
-            const deptFilter = document.getElementById('deptFilter');
-            depts.forEach(dept => {
-                const option = document.createElement('option');
-                option.value = dept;
-                option.textContent = dept;
-                deptFilter.appendChild(option);
-            });
-
-            // Password protection for signature
-            const passwordInput = document.getElementById('signaturePassword');
-            const signatureCheckbox = document.getElementById('showSignature');
-            
-            if (passwordInput && signatureCheckbox) {
-                passwordInput.addEventListener('input', function(e) {
-                    const correctPassword = 'OSUS2025';
-                    if (e.target.value === correctPassword) {
-                        signatureCheckbox.disabled = false;
-                        signatureCheckbox.checked = true;
-                        e.target.style.borderColor = 'green';
-                        e.target.style.borderWidth = '2px';
-                    } else {
-                        signatureCheckbox.disabled = true;
-                        signatureCheckbox.checked = false;
-                        e.target.style.borderColor = '';
-                        e.target.style.borderWidth = '';
-                    }
-                });
-            }
-
-            // Initial render
-            renderList();
         });
     </script>
 
