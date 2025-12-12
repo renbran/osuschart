@@ -911,70 +911,102 @@
         // Employee Data
         const employees = [
             // Management
+            {name: "HISHAM EL ASSAAD", position: "FOUNDER & CEO", dept: "Management", type: "partner"},
             {name: "AHMED ABOELAZAYEM", position: "Managing Partner", dept: "Management", type: "partner"},
             
-            // Partners
+            // Partners - Primary Department
             {name: "FARAAZ ARIF", position: "Senior Partner Primary Sales", dept: "Primary Department", type: "partner"},
             {name: "ADNAN ARIF", position: "Associate Partner Primary Sales", dept: "Primary Department", type: "partner"},
             {name: "AHMAD WALID", position: "Associate Partner Primary Sales", dept: "Primary Department", type: "partner"},
             {name: "ALISAR AL NAJDI", position: "Associate Partner Primary Sales", dept: "Primary Department", type: "partner"},
-            {name: "ELDAR BUNIATAU", position: "Associate Partner Primary Sales", dept: "Primary Department", type: "partner"},
+            {name: "ELDAR BUNIATAU", position: "JR Partner Primary Sales", dept: "Primary Department", type: "partner"},
             {name: "KHAOULA BOUTOUIL", position: "Associate Partner Primary Sales", dept: "Primary Department", type: "partner"},
             {name: "RADWA AHMED", position: "Associate Partner Primary Sales", dept: "Primary Department", type: "partner"},
-            {name: "KARIM EL SABAGH", position: "Junior Partner Primary Sales", dept: "Primary Department", type: "partner"},
+            {name: "IGOR KHOMENKO", position: "JR Partner Primary Sales", dept: "Primary Department", type: "partner"},
+            {name: "KARIM EL SABAGH", position: "JR Partner Primary Sales", dept: "Primary Department", type: "partner"},
+            
+            // Partners - Secondary Department
             {name: "MAICKEL FARAGALLA", position: "Associate Partner Secondary Sales", dept: "Secondary Department", type: "partner"},
+            
+            // Partners - Strategic Project
             {name: "SETAREH TOFIGHI", position: "Senior Partner Exclusive Sales", dept: "Strategic Project", type: "partner"},
             {name: "HAGAR MOHAMMAD", position: "Associate Partner Exclusive Sales", dept: "Strategic Project", type: "partner"},
             {name: "LERBI LEGISI", position: "Associate Partner Exclusive Sales", dept: "Strategic Project", type: "partner"},
-            {name: "MALEKA MOHAMED AMMAR", position: "Relationship Manager Exclusive Sales", dept: "Strategic Project", type: "manager"},
             {name: "MEHDI MOFIDI", position: "Associate Partner Exclusive Sales", dept: "Strategic Project", type: "partner"},
-            {name: "OMAR MOUNIR", position: "Relationship Manager Exclusive Sales", dept: "Strategic Project", type: "manager"},
-            {name: "SINA SAEEDI", position: "Associate Partner Exclusive Sales", dept: "Strategic Project", type: "partner"},
             {name: "WESSAM SIMON", position: "Associate Partner Exclusive Sales", dept: "Strategic Project", type: "partner"},
+            
+            // Partners - Operations & Support
+            {name: "ARLYN TABIRARA", position: "Junior Partner Administrator / Admin Lead", dept: "Operation & Support", type: "partner"},
             {name: "JEROME PADILLA", position: "Junior Partner Administrator", dept: "Operation & Support", type: "partner"},
+            
+            // Partners - Finance
+            {name: "JUNAID VARDA", position: "JR Partner Chief Accountant", dept: "Finance Department", type: "partner"},
+            
+            // Partners - Founder's Office
             {name: "RENBRAN ANTHONY MADELO", position: "Junior Partner Performance Metric Analyst", dept: "Founder's Office", type: "partner"},
             
-            // Directors
-            {name: "MOHAMED ALI ZAYANI", position: "Associate Director Primary II Sales", dept: "Primary II Department", type: "director"},
+            // Directors - Primary Department
+            {name: "ARSALAN PERVAIZ", position: "Associate Director Primary Sales", dept: "Primary Department", type: "director"},
+            {name: "VANESSA CRISTINA", position: "Associate Director Primary Sales", dept: "Primary Department", type: "director"},
+            {name: "PAMELA RIZKALLAH", position: "Associate Director Primary Sales", dept: "Primary Department", type: "director"},
+            
+            // Directors - Primary II Department
+            {name: "MOHAMED ALI ZAYANI", position: "Associate Director Primary Sales", dept: "Primary II Department", type: "director"},
+            {name: "MOHAMED ZAAZAA", position: "Associate Director Primary Sales", dept: "Primary II Department", type: "director"},
+            {name: "MOSTAFA MAMDOUH FADL ABOUZID", position: "Associate Director Primary Sales", dept: "Primary II Department", type: "director"},
+            
+            // Directors - Secondary Department
             {name: "MOHAMMAD YAGHMOUR", position: "Associate Director Secondary Sales", dept: "Secondary Department", type: "director"},
+            {name: "AHMED AHMER", position: "Associate Director Secondary Sales", dept: "Secondary Department", type: "director"},
+            {name: "MARIA OSAMA FAYEZ", position: "Associate Director Secondary Sales", dept: "Secondary Department", type: "director"},
+            {name: "MODAR MAWAS", position: "Associate Director Secondary Sales", dept: "Secondary Department", type: "director"},
+            
+            // Directors - Strategic Project
+            {name: "SINA SAEEDI", position: "Associate Director Exclusive Sales", dept: "Strategic Project", type: "director"},
+            
+            // Directors - Direct Reporting
             {name: "ASEM KHURSHID", position: "Associate Director Portfolio Investment", dept: "Direct Reporting", type: "director"},
             {name: "CLAUDIO PANOTA", position: "Associate Director Portfolio Investment", dept: "Direct Reporting", type: "director"},
+            
+            // Directors - Finance
             {name: "AHMED WAHAB", position: "Chief Finance Officer", dept: "Finance Department", type: "director"},
             
-            // Managers
+            // Managers - Primary Department
             {name: "AITOR SARACHO", position: "Associate Manager Primary Sales", dept: "Primary Department", type: "manager"},
             {name: "AMANI ALTELL", position: "Associate Manager Primary Sales", dept: "Primary Department", type: "manager"},
             {name: "ANITA AROIAN", position: "Associate Manager Primary Sales", dept: "Primary Department", type: "manager"},
-            {name: "IGOR KHOMENKO", position: "Associate Manager Primary Sales", dept: "Primary Department", type: "manager"},
             {name: "MARIAM RAHOULI", position: "Associate Manager Primary Sales", dept: "Primary Department", type: "manager"},
             {name: "STEPHANIE KEHDY", position: "Associate Manager Primary Sales", dept: "Primary Department", type: "manager"},
             {name: "VICTORIA GADZHIEVA", position: "Associate Manager Primary Sales", dept: "Primary Department", type: "manager"},
-            {name: "VANESSA CRISTINA", position: "Associate Manager Primary Sales", dept: "Primary Department", type: "manager"},
             {name: "ZAYED AL SHAHOOMI", position: "Associate Manager Primary Sales", dept: "Primary Department", type: "manager"},
-            {name: "PAMELA RIZKALLAH", position: "Associate Manager Primary Sales", dept: "Primary Department", type: "manager"},
             {name: "DMYTRO ILIN", position: "Associate Manager Primary Sales", dept: "Primary Department", type: "manager"},
-            {name: "MOHAMED ZAAZAA", position: "Associate Manager Primary II Sales", dept: "Primary II Department", type: "manager"},
-            {name: "MOSTAFA ABOUZID", position: "Associate Manager Primary II Sales", dept: "Primary II Department", type: "manager"},
-            {name: "AHMED AHMER", position: "Associate Director Secondary Sales", dept: "Secondary Department", type: "director"},
-            {name: "MARIA FAYEZ", position: "Associate Director Secondary Sales", dept: "Secondary Department", type: "director"},
-            {name: "MODAR MAWAS", position: "Associate Director Secondary Sales", dept: "Secondary Department", type: "director"},
+            
+            // Managers - Secondary Department
+            {name: "MONIKA MILKOVA", position: "Associate Manager Secondary Sales", dept: "Secondary Department", type: "manager"},
+            {name: "SLAGJAN PETRESKA", position: "Associate Manager Secondary Sales", dept: "Secondary Department", type: "manager"},
+            
+            // Managers - Strategic Project
+            {name: "MALEKA MOHAMED AMMAR", position: "Associate Manager Exclusive Sales", dept: "Strategic Project", type: "manager"},
+            {name: "OMAR MOUNIR", position: "Associate Manager Exclusive Sales", dept: "Strategic Project", type: "manager"},
+            
+            // Managers - Marketing
             {name: "RANIA SAYED", position: "Assistant Marketing Manager", dept: "Marketing Department", type: "manager"},
             {name: "JORDAN SANTOS", position: "Marketing Visual Specialist", dept: "Marketing Department", type: "manager"},
             {name: "ASAD ABRAHANI", position: "Graphic Design", dept: "Marketing Department", type: "manager"},
-            {name: "JUNAID VARDA", position: "Chief Accountant", dept: "Finance Department", type: "manager"},
+            
+            // Managers - Finance
             {name: "NAVEEN KUMAR", position: "Accountant", dept: "Finance Department", type: "manager"},
             {name: "MOHAMMAD RAZIL", position: "Accountant", dept: "Finance Department", type: "manager"},
             
-            // Team Leads
-            {name: "ARLYN TABIRARA", position: "Junior Partner Administrator / Admin Lead", dept: "Operation & Support", type: "partner"},
-            
-            // Support Staff
+            // Support Staff - Operations
             {name: "AHMED GABER", position: "Administrator", dept: "Operation & Support", type: "manager"},
             {name: "DHANRAJ POOJARY", position: "Administrator", dept: "Operation & Support", type: "manager"},
             {name: "JEANOR BULACON", position: "Office Assistant", dept: "Operation & Support", type: "manager"},
             {name: "JENETTE ANGAT", position: "Senior Barista", dept: "Operation & Support", type: "manager"},
-            {name: "JEROME PADILLA", position: "Junior Partner Administrator", dept: "Operation & Support", type: "partner"},
             {name: "TRIPTI SHETTY", position: "Administrator", dept: "Operation & Support", type: "manager"},
+            
+            // Founder's Office
+            {name: "AHMED MOHAMED MAHMOUD EBRAHIM", position: "Office Assistant", dept: "Founder's Office", type: "manager"}
         ];
 
         let selected = new Set();
