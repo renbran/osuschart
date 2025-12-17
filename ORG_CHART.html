@@ -888,8 +888,8 @@
         }
 
         .employee-avatar {
-            width: 40px;
-            height: 40px;
+            width: 48px;
+            height: 48px;
             background: linear-gradient(135deg, var(--burgundy) 0%, var(--burgundy-dark) 100%);
             border: 2px solid var(--gold);
             border-radius: 50%;
@@ -900,6 +900,44 @@
             color: var(--white);
             font-weight: 700;
             font-size: 0.8rem;
+        }
+
+        .lead-avatar {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid var(--gold);
+            background: linear-gradient(135deg, var(--burgundy) 0%, var(--burgundy-dark) 100%);
+            margin: 0 auto 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        .lead-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .executive-avatar {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid var(--gold);
+            background: linear-gradient(135deg, var(--burgundy) 0%, var(--burgundy-dark) 100%);
+            margin: 0 auto 10px;
+        }
+
+        .executive-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .employee-name {
@@ -1400,6 +1438,9 @@
                     <div class="executive-card founder" onclick="showModal(employees[0])">
                         <div class="executive-header">
                             <span class="executive-badge">👑 Founder</span>
+                            <div class="executive-avatar">
+                                <img src="https://i.postimg.cc/63N9sktT/Hisham.jpg" alt="HISHAM EL ASSAAD">
+                            </div>
                             <h2 class="executive-name">HISHAM EL ASSAAD</h2>
                             <p class="executive-title">Founder</p>
                         </div>
@@ -1437,6 +1478,9 @@
                     <div class="executive-card md" onclick="showModal(employees[1])">
                         <div class="executive-header">
                             <span class="executive-badge">📊 Managing Partner</span>
+                            <div class="executive-avatar">
+                                <img src="https://i.postimg.cc/NjSsDynd/AHMED-ABO-ELAZAYEM-Managing-Director.jpg" alt="AHMED ABOELAZAYEM">
+                            </div>
                             <h2 class="executive-name">AHMED ABOELAZAYEM</h2>
                             <p class="executive-title">Managing Partner</p>
                         </div>
@@ -1533,86 +1577,97 @@
         // Employee Data from CSV
         const employees = [
             // MANAGEMENT
-            {name: "HISHAM EL ASSAAD", department: "MANAGEMENT", position: "FOUNDER", reportsTo: "BOARD OF DIRECTORS", coach: "BOARD OF DIRECTORS", isExec: true, isFounder: true},
-            {name: "AHMED ABOELAZAYEM", department: "MANAGEMENT", position: "MANAGING PARTNER", reportsTo: "HISHAM EL ASSAAD", coach: "HISHAM EL ASSAAD", isExec: true, isMD: true},
+            {name: "HISHAM EL ASSAAD", department: "MANAGEMENT", position: "FOUNDER", reportsTo: "BOARD OF DIRECTORS", coach: "BOARD OF DIRECTORS", isExec: true, isFounder: true, image: "https://i.postimg.cc/63N9sktT/Hisham.jpg"},
+            {name: "AHMED ABOELAZAYEM", department: "MANAGEMENT", position: "MANAGING PARTNER", reportsTo: "HISHAM EL ASSAAD", coach: "HISHAM EL ASSAAD", isExec: true, isMD: true, image: "https://i.postimg.cc/NjSsDynd/AHMED-ABO-ELAZAYEM-Managing-Director.jpg"},
             
             // PRIMARY DEPARTMENT
-            {name: "FARAAZ ARIF", department: "PRIMARY DEPARTMENT", position: "SENIOR PARTNER PRIMARY SALES", reportsTo: "AHMED ABOELAZAYEM", coach: "HISHAM EL ASSAAD", isLead: true},
-            {name: "ADNAN ARIF", department: "PRIMARY DEPARTMENT", position: "ASSOCIATE PARTNER PRIMARY SALES", reportsTo: "FARAAZ ARIF", coach: "FARAAZ ARIF", image: "https://i.postimg.cc/T1Sq13KK/ADNAN-ARIF-ASSOCIATE-PARTNER-PRIMARY-SALES.jpg"},
-            {name: "AHMAD WALID", department: "PRIMARY DEPARTMENT", position: "ASSOCIATE PARTNER PRIMARY SALES", reportsTo: "FARAAZ ARIF", coach: "FARAAZ ARIF", image: "https://i.postimg.cc/LXWZB0m4/AHMAD-WALID-ASSOCIATE-PARTNER-PRIMARY-SALES.jpg"},
+            {name: "ARSALAN PERVAIZ", department: "PRIMARY DEPARTMENT", position: "ASSOCIATE DIRECTOR PRIMARY SALES", reportsTo: "AHMED ABOELAZAYEM", coach: "AHMED ABOELAZAYEM", image: "https://i.postimg.cc/fVpmLHLM/Arsalan.jpg"},
+            {name: "FARAAZ ARIF", department: "PRIMARY DEPARTMENT", position: "SENIOR PARTNER PRIMARY SALES", reportsTo: "AHMED ABOELAZAYEM", coach: "HISHAM EL ASSAAD", isLead: true, image: "https://i.postimg.cc/hjqSFkcN/FARAAZ-ARIF-Head-of-Primary-Sales.jpg"},
+            {name: "AHMAD WALID", department: "PRIMARY DEPARTMENT - WALID TEAM", position: "ASSOCIATE PARTNER PRIMARY SALES", reportsTo: "FARAAZ ARIF", coach: "FARAAZ ARIF", isLead: true, image: "https://i.postimg.cc/LXWZB0m4/AHMAD-WALID-ASSOCIATE-PARTNER-PRIMARY-SALES.jpg"},
+            {name: "ADNAN ARIF", department: "PRIMARY DEPARTMENT - WALID TEAM", position: "ASSOCIATE PARTNER PRIMARY SALES", reportsTo: "AHMAD WALID", coach: "AHMAD WALID", image: "https://i.postimg.cc/T1Sq13KK/ADNAN-ARIF-ASSOCIATE-PARTNER-PRIMARY-SALES.jpg"},
             {name: "AITOR SARACHO", department: "PRIMARY DEPARTMENT", position: "ASSOCIATE MANAGER PRIMARY SALES", reportsTo: "FARAAZ ARIF", coach: "FARAAZ ARIF", image: "https://i.postimg.cc/bJ52HFqy/AITOR-SARACHO-RELATIONSHIP-MANAGER-PRIMARY-SALES.jpg"},
             {name: "ALISAR AL NAJDI", department: "PRIMARY DEPARTMENT", position: "ASSOCIATE PARTNER PRIMARY SALES", reportsTo: "FARAAZ ARIF", coach: "FARAAZ ARIF", image: "https://i.postimg.cc/QVG9v9Bz/ALISSAR-NAJDI-ASSOCIATE-PARTNER-PRIMARY-SALES.jpg"},
-            {name: "AMANI ALTELL", department: "PRIMARY DEPARTMENT", position: "ASSOCIATE MANAGER PRIMARY SALES", reportsTo: "FARAAZ ARIF", coach: "FARAAZ ARIF", image: "https://i.postimg.cc/Qdqmkswt/AMANI-ALTELL-RELATIONSHIP-MANAGER-SALES.jpg"},
+            {name: "AMANI ALTELL", department: "PRIMARY DEPARTMENT - WALID TEAM", position: "ASSOCIATE MANAGER PRIMARY SALES", reportsTo: "AHMAD WALID", coach: "AHMAD WALID", image: "https://i.postimg.cc/Qdqmkswt/AMANI-ALTELL-RELATIONSHIP-MANAGER-SALES.jpg"},
             {name: "ANITA AROIAN", department: "PRIMARY DEPARTMENT", position: "ASSOCIATE MANAGER PRIMARY SALES", reportsTo: "FARAAZ ARIF", coach: "FARAAZ ARIF", image: "https://i.postimg.cc/vZvhLMkd/ANITA-AROIAN-RELATIONSHIP-MANAGER-PRIMARY-SALES.jpg"},
-            {name: "ELDAR BUNIATAU", department: "PRIMARY DEPARTMENT", position: "ASSOCIATE PARTNER PRIMARY SALES", reportsTo: "FARAAZ ARIF", coach: "FARAAZ ARIF", image: "https://i.postimg.cc/Gp2FFDv3/ELDAR-BUNIATAU-ASSOCIATE-PARTNER-PRIMARY-SALES.jpg"},
-            {name: "IGOR KHOMENKO", department: "PRIMARY DEPARTMENT", position: "ASSOCIATE MANAGER PRIMARY SALES", reportsTo: "FARAAZ ARIF", coach: "FARAAZ ARIF", image: "https://i.postimg.cc/qqf2HZSh/IGOR-KHOMENKO-ASSOCIATE-PARTNER-PRIMARY-SALES.jpg"},
+            {name: "ELDAR BUNIATAU", department: "PRIMARY DEPARTMENT", position: "JR PARTNER PRIMARY SALES", reportsTo: "FARAAZ ARIF", coach: "FARAAZ ARIF", image: "https://i.postimg.cc/Gp2FFDv3/ELDAR-BUNIATAU-ASSOCIATE-PARTNER-PRIMARY-SALES.jpg"},
+            {name: "IGOR KHOMENKO", department: "PRIMARY DEPARTMENT", position: "JR PARTNER PRIMARY SALES", reportsTo: "FARAAZ ARIF", coach: "FARAAZ ARIF", image: "https://i.postimg.cc/qqf2HZSh/IGOR-KHOMENKO-ASSOCIATE-PARTNER-PRIMARY-SALES.jpg"},
             {name: "KARIM EL SABAGH", department: "PRIMARY DEPARTMENT", position: "JR PARTNER PRIMARY SALES", reportsTo: "FARAAZ ARIF", coach: "FARAAZ ARIF", image: "https://i.postimg.cc/dLXLmhKT/KARIM-EL-SABAGH-ASSOCIATE-PARTNER-PRIMARY-SALES.jpg"},
-            {name: "KHAOULA BOUTOUIL", department: "PRIMARY DEPARTMENT", position: "ASSOCIATE PARTNER PRIMARY SALES", reportsTo: "FARAAZ ARIF", coach: "FARAAZ ARIF", image: "https://i.postimg.cc/fy4YQgpK/KHAOULA-BOUTOUIL-SENIOR-ASSOCIATE-PARTNER-PRIMARY-SALES.jpg"},
-            {name: "MARIAM RAHOULI", department: "PRIMARY DEPARTMENT", position: "ASSOCIATE MANAGER PRIMARY SALES", reportsTo: "FARAAZ ARIF", coach: "FARAAZ ARIF", image: "https://i.postimg.cc/sg1xK40F/MARIAM-RAHOULI-ASSOCIATE-PARTNER-PRIMARY-SALES.jpg"},
-            {name: "MOHAMED NADER", department: "PRIMARY DEPARTMENT", position: "ASSOCIATE MANAGER PRIMARY SALES", reportsTo: "FARAAZ ARIF", coach: "FARAAZ ARIF"},
-            {name: "RADWA AHMED", department: "PRIMARY DEPARTMENT", position: "ASSOCIATE PARTNER PRIMARY SALES", reportsTo: "FARAAZ ARIF", coach: "FARAAZ ARIF"},
-            {name: "STEPHANIE KEHDY", department: "PRIMARY DEPARTMENT", position: "ASSOCIATE MANAGER PRIMARY SALES", reportsTo: "FARAAZ ARIF", coach: "FARAAZ ARIF"},
+            {name: "KHAOULA BOUTOUIL", department: "PRIMARY DEPARTMENT - WALID TEAM", position: "ASSOCIATE PARTNER PRIMARY SALES", reportsTo: "AHMAD WALID", coach: "AHMAD WALID", image: "https://i.postimg.cc/fy4YQgpK/KHAOULA-BOUTOUIL-SENIOR-ASSOCIATE-PARTNER-PRIMARY-SALES.jpg"},
+            {name: "MARIAM RAHOULI", department: "PRIMARY DEPARTMENT - WALID TEAM", position: "ASSOCIATE MANAGER PRIMARY SALES", reportsTo: "AHMAD WALID", coach: "AHMAD WALID", image: "https://i.postimg.cc/sg1xK40F/MARIAM-RAHOULI-ASSOCIATE-PARTNER-PRIMARY-SALES.jpg"},
+            {name: "RADWA AHMED", department: "PRIMARY DEPARTMENT", position: "ASSOCIATE PARTNER PRIMARY SALES", reportsTo: "FARAAZ ARIF", coach: "FARAAZ ARIF", image: "https://osusproperties.com/images/osus.png"},
+            {name: "STEPHANIE KEHDY", department: "PRIMARY DEPARTMENT", position: "ASSOCIATE MANAGER PRIMARY SALES", reportsTo: "FARAAZ ARIF", coach: "FARAAZ ARIF", image: "https://osusproperties.com/images/osus.png"},
             {name: "VICTORIA GADZHIEVA", department: "PRIMARY DEPARTMENT", position: "ASSOCIATE MANAGER PRIMARY SALES", reportsTo: "FARAAZ ARIF", coach: "FARAAZ ARIF", image: "https://i.postimg.cc/NfCfyrGb/VIKTORIIA-GADZHIEVA-RELATIONSHIP-MANAGER-SALES.jpg"},
-            {name: "VANESSA CRISTINA", department: "PRIMARY DEPARTMENT", position: "ASSOCIATE MANAGER PRIMARY SALES", reportsTo: "FARAAZ ARIF", coach: "FARAAZ ARIF"},
-            {name: "ZAYED AL SHAHOOMI", department: "PRIMARY DEPARTMENT", position: "ASSOCIATE MANAGER PRIMARY SALES", reportsTo: "FARAAZ ARIF", coach: "FARAAZ ARIF"},
-            {name: "PAMELA RIZKALLAH", department: "PRIMARY DEPARTMENT", position: "ASSOCIATE MANAGER PRIMARY SALES", reportsTo: "FARAAZ ARIF", coach: "FARAAZ ARIF"},
+            {name: "VANESSA CRISTINA", department: "PRIMARY DEPARTMENT", position: "ASSOCIATE DIRECTOR PRIMARY SALES", reportsTo: "FARAAZ ARIF", coach: "FARAAZ ARIF", image: "https://osusproperties.com/images/osus.png"},
+            {name: "ZAYED AL SHAHOOMI", department: "PRIMARY DEPARTMENT", position: "ASSOCIATE MANAGER PRIMARY SALES", reportsTo: "FARAAZ ARIF", coach: "FARAAZ ARIF", image: "https://osusproperties.com/images/osus.png"},
+            {name: "PAMELA RIZKALLAH", department: "PRIMARY DEPARTMENT", position: "ASSOCIATE DIRECTOR PRIMARY SALES", reportsTo: "FARAAZ ARIF", coach: "FARAAZ ARIF", image: "https://osusproperties.com/images/osus.png"},
             {name: "DMYTRO ILIN", department: "PRIMARY DEPARTMENT", position: "ASSOCIATE MANAGER PRIMARY SALES", reportsTo: "FARAAZ ARIF", coach: "FARAAZ ARIF", image: "https://i.postimg.cc/pLkQ5C52/DYMITRO-ILIN-RELATIONSHIP-MANAGER-SALES.jpg"},
-            {name: "AHMAD BADAWY", department: "PRIMARY DEPARTMENT", position: "ASSOCIATE MANAGER PRIMARY SALES", reportsTo: "FARAAZ ARIF", coach: "FARAAZ ARIF", image: "https://i.postimg.cc/qRFCXZ4Z/AHMED-MOHAMED-BADAWY-ATTA-RELATIONSHIP-MANAGER-SALES.jpg"},
             
             // PRIMARY II DEPARTMENT
-            {name: "MOHAMED ALI ZAYANI", department: "PRIMARY II DEPARTMENT", position: "ASSOCIATE DIRECTOR PRIMARY II SALES", reportsTo: "AHMED ABOELAZAYEM", coach: "AHMED ABOELAZAYEM", image: "https://i.postimg.cc/bwMJ5SKZ/MOHAMED-ALI-ZAYANI-RELATIONSHIP-MANAGER-SALES.jpg"},
-            {name: "MOHAMED ZAAZAA", department: "PRIMARY II DEPARTMENT", position: "ASSOCIATE MANAGER PRIMARY II SALES", reportsTo: "AHMED ABOELAZAYEM", coach: "AHMED ABOELAZAYEM"},
-            {name: "MOSTAFA MAMDOUH FADL ABOUZID", department: "PRIMARY II DEPARTMENT", position: "ASSOCIATE MANAGER PRIMARY II SALES", reportsTo: "AHMED ABOELAZAYEM", coach: "AHMED ABOELAZAYEM", image: "https://i.postimg.cc/HkKxN8fS/MOSTAFA-ABOUZID-PRIMARY-RELATIONSHIP-MANAGER.jpg"},
+            {name: "MOHAMED ALI ZAYANI", department: "PRIMARY II DEPARTMENT", position: "ASSOCIATE DIRECTOR PRIMARY SALES", reportsTo: "AHMED ABOELAZAYEM", coach: "AHMED ABOELAZAYEM", image: "https://i.postimg.cc/bwMJ5SKZ/MOHAMED-ALI-ZAYANI-RELATIONSHIP-MANAGER-SALES.jpg"},
+            {name: "MOHAMED ZAAZAA", department: "PRIMARY II DEPARTMENT", position: "ASSOCIATE DIRECTOR PRIMARY SALES", reportsTo: "AHMED ABOELAZAYEM", coach: "AHMED ABOELAZAYEM", image: "https://osusproperties.com/images/osus.png"},
+            {name: "MOSTAFA MAMDOUH FADL ABOUZID", department: "PRIMARY II DEPARTMENT", position: "ASSOCIATE DIRECTOR PRIMARY SALES", reportsTo: "AHMED ABOELAZAYEM", coach: "AHMED ABOELAZAYEM", image: "https://i.postimg.cc/HkKxN8fS/MOSTAFA-ABOUZID-PRIMARY-RELATIONSHIP-MANAGER.jpg"},
             
             // SECONDARY DEPARTMENT
             {name: "MOHAMMAD YAGHMOUR", department: "SECONDARY DEPARTMENT", position: "ASSOCIATE DIRECTOR SECONDARY SALES", reportsTo: "AHMED ABOELAZAYEM", coach: "AHMED ABOELAZAYEM", isLead: true, image: "https://i.postimg.cc/3x6Rq0P4/MOHAMMAD-YAGHMOUR-DIRECTOR-OF-SECONDARY-SALES.jpg"},
             {name: "MAICKEL FARAGALLA", department: "SECONDARY DEPARTMENT", position: "ASSOCIATE PARTNER SECONDARY SALES", reportsTo: "AHMED ABOELAZAYEM", coach: "AHMED ABOELAZAYEM", isLead: true, image: "https://i.postimg.cc/Kv04nHf0/MAICKEL-M-FARAGALLA-SENIOR-ASSOCIATE-PARTNER-SECONDARY.jpg"},
-            {name: "AHMED AHMER", department: "SECONDARY DEPARTMENT", position: "ASSOCIATE MANAGER SECONDARY SALES", reportsTo: "MOHAMMAD YAGHMOUR", coach: "AHMED ABOELAZAYEM", image: "https://i.postimg.cc/cC8tDMJW/AHMED-AMER-SENIOR-SECONDARY-MARKET-SPECIALIST.jpg"},
-            {name: "MARIA OSAMA FAYEZ", department: "SECONDARY DEPARTMENT", position: "ASSOCIATE MANAGER SECONDARY SALES", reportsTo: "MOHAMMAD YAGHMOUR", coach: "", image: "https://i.postimg.cc/1tDfwR7C/MARIA-FAYEZ-RELATIONSHIP-MANAGER-SALES.jpg"},
+            {name: "AHMED AHMER", department: "SECONDARY DEPARTMENT", position: "ASSOCIATE MANAGER SECONDARY SALES", reportsTo: "MOHAMMAD YAGHMOUR", coach: "MOHAMMAD YAGHMOUR", image: "https://i.postimg.cc/cC8tDMJW/AHMED-AMER-SENIOR-SECONDARY-MARKET-SPECIALIST.jpg"},
+            {name: "MARIA OSAMA FAYEZ", department: "SECONDARY DEPARTMENT", position: "ASSOCIATE MANAGER SECONDARY SALES", reportsTo: "MOHAMMAD YAGHMOUR", coach: "MOHAMMAD YAGHMOUR", image: "https://i.postimg.cc/1tDfwR7C/MARIA-FAYEZ-RELATIONSHIP-MANAGER-SALES.jpg"},
             {name: "MODAR MAWAS", department: "SECONDARY DEPARTMENT", position: "ASSOCIATE MANAGER SECONDARY SALES", reportsTo: "MOHAMMAD YAGHMOUR", coach: "MOHAMMAD YAGHMOUR", image: "https://i.postimg.cc/qvgqQxZC/MODAAR-MAWAS-RELATIONSHIP-MANAGER-SALES.jpg"},
+            {name: "MONIKA MILKOVA", department: "SECONDARY DEPARTMENT", position: "ASSOCIATE SECONDARY SALES", reportsTo: "MAICKEL FARAGALLA", coach: "MAICKEL FARAGALLA", image: "https://osusproperties.com/images/MONIKA%20MILKOVA%20-%20RELATIONSHIP%20MANAGER%20SALES.jpg"},
+            {name: "SLAGJAN PETRESKA", department: "SECONDARY DEPARTMENT", position: "ASSOCIATE SECONDARY SALES", reportsTo: "MAICKEL FARAGALLA", coach: "MAICKEL FARAGALLA", image: "https://osusproperties.com/images/SLAGJAN-PETRESKA---RELATIONSHIP-MANAGER-SALES.jpg"},
             
             // STRATEGIC PROJECT
-            {name: "SETAREH TOFIGHI", department: "STRATEGIC PROJECT", position: "SENIOR PARTNER EXCLUSIVE SALES", reportsTo: "HISHAM EL ASSAAD", coach: "HISHAM EL ASSAAD", isLead: true},
-            {name: "HAGAR MOHAMMAD", department: "STRATEGIC PROJECT", position: "ASSOCIATE PARTNER EXCLUSIVE SALES", reportsTo: "SETAREH TOFIGHI", coach: "HISHAM EL ASSAAD"},
+            {name: "SETAREH TOFIGHI", department: "STRATEGIC PROJECT", position: "SENIOR PARTNER EXCLUSIVE SALES", reportsTo: "HISHAM EL ASSAAD", coach: "HISHAM EL ASSAAD", isLead: true, image: "https://i.postimg.cc/TwXR8zfN/SETAREH-TOFIGHI-Head-of-Exclusive-Projects.jpg"},
+            {name: "HAGAR MOHAMMAD", department: "STRATEGIC PROJECT", position: "ASSOCIATE PARTNER EXCLUSIVE SALES", reportsTo: "SETAREH TOFIGHI", coach: "HISHAM EL ASSAAD", image: "https://osusproperties.com/images/osus.png"},
             {name: "LERBI LEGISI", department: "STRATEGIC PROJECT", position: "ASSOCIATE PARTNER EXCLUSIVE SALES", reportsTo: "SETAREH TOFIGHI", coach: "SETAREH TOFIGHI", image: "https://i.postimg.cc/NjGmtXJJ/LERBI-LEGISI-ASSOCIATE-PARTNER-SENIOR-RELATIONSHIP-MANAGER-SALES.jpg"},
-            {name: "MALEKA MOHAMED AMMAR", department: "STRATEGIC PROJECT", position: "RELATIONSHIP MANAGER EXCLUSIVE SALES", reportsTo: "SETAREH TOFIGHI", coach: "SETAREH TOFIGHI"},
+            {name: "MALEKA MOHAMED AMMAR", department: "STRATEGIC PROJECT", position: "ASSOCIATE MANAGER EXCLUSIVE SALES", reportsTo: "SETAREH TOFIGHI", coach: "SETAREH TOFIGHI", image: "https://osusproperties.com/images/osus.png"},
             {name: "MEHDI MOFIDI", department: "STRATEGIC PROJECT", position: "ASSOCIATE PARTNER EXCLUSIVE SALES", reportsTo: "SETAREH TOFIGHI", coach: "SETAREH TOFIGHI", image: "https://i.postimg.cc/Hkjn39PV/MEHDI-MOFIDI-ASSOCIATE-PARTNER-SENIOR-RELATIONSHIP-MANAGER-SALES.jpg"},
-            {name: "OMAR MOUNIR", department: "STRATEGIC PROJECT", position: "RELATIONSHIP MANAGER EXCLUSIVE SALES", reportsTo: "SETAREH TOFIGHI", coach: "SETAREH TOFIGHI", image: "https://i.postimg.cc/2SJ6tLPX/OMAR-MOUNIR-RELATIONSHIP-MANAGER-SALES.jpg"},
-            {name: "SINA SAEEDI", department: "STRATEGIC PROJECT", position: "ASSOCIATE PARTNER EXCLUSIVE SALES", reportsTo: "SETAREH TOFIGHI", coach: "SETAREH TOFIGHI", image: "https://i.postimg.cc/jdSSdhTX/SINA-SAEEDI-RELATIONSHIP-MANAGER-SALES.jpg"},
-            {name: "WESSAM SIMON", department: "STRATEGIC PROJECT", position: "ASSOCIATE PARTNER EXCLUSIVE SALES", reportsTo: "SETAREH TOFIGHI", coach: "SETAREH TOFIGHI"},
+            {name: "OMAR MOUNIR", department: "STRATEGIC PROJECT", position: "ASSOCIATE MANAGER EXCLUSIVE SALES", reportsTo: "SETAREH TOFIGHI", coach: "SETAREH TOFIGHI", image: "https://i.postimg.cc/2SJ6tLPX/OMAR-MOUNIR-RELATIONSHIP-MANAGER-SALES.jpg"},
+            {name: "SINA SAEEDI", department: "STRATEGIC PROJECT", position: "ASSOCIATE DIRECTOR EXCLUSIVE SALES", reportsTo: "SETAREH TOFIGHI", coach: "SETAREH TOFIGHI", image: "https://i.postimg.cc/jdSSdhTX/SINA-SAEEDI-RELATIONSHIP-MANAGER-SALES.jpg"},
+            {name: "WESSAM SIMON", department: "STRATEGIC PROJECT", position: "ASSOCIATE PARTNER EXCLUSIVE SALES", reportsTo: "SETAREH TOFIGHI", coach: "SETAREH TOFIGHI", image: "https://osusproperties.com/images/osus.png"},
             
             // DIRECT REPORTING TO FOUNDER
             {name: "ASEM KHURSHID", department: "DIRECT REPORTING TO FOUNDER", position: "ASSOCIATE DIRECTOR PORTFOLIO INVESTMENT", reportsTo: "AHMED ABOELAZAYEM", coach: "", image: "https://i.postimg.cc/g0TvN0Kf/ASEM-KHURSHID-ASSOCIATE-DIRECTOR-PORTFOLIO-INVESTMENT.jpg"},
-            {name: "CLAUDIO PANOTA", department: "DIRECT REPORTING TO FOUNDER", position: "ASSOCIATE DIRECTOR PORTFOLIO INVESTMENT", reportsTo: "AHMED ABOELAZAYEM", coach: ""},
+            {name: "CLAUDIO PANOTA", department: "DIRECT REPORTING TO FOUNDER", position: "ASSOCIATE DIRECTOR PORTFOLIO INVESTMENT", reportsTo: "AHMED ABOELAZAYEM", coach: "", image: "https://osusproperties.com/images/osus.png"},
             
             // OPERATION & SUPPORT
-            {name: "ARLYN TABIRARA", department: "OPERATION & SUPPORT", position: "JUNIOR PARTNER ADMINISTRATOR / ADMIN LEAD", reportsTo: "AHMED ABOELAZAYEM", coach: "AHMED ABOELAZAYEM", isLead: true},
-            {name: "AHMED GABER", department: "OPERATION & SUPPORT", position: "ADMINISTRATOR", reportsTo: "ARLYN TABIRARA", coach: "ARLYN TABIRARA"},
-            {name: "DHANRAJ POOJARY", department: "OPERATION & SUPPORT", position: "ADMINISTRATOR", reportsTo: "ARLYN TABIRARA", coach: "ARLYN TABIRARA"},
-            {name: "JEANOR BULACON", department: "OPERATION & SUPPORT", position: "OFFICE ASSISTANT", reportsTo: "ARLYN TABIRARA", coach: "ARLYN TABIRARA"},
-            {name: "JENETTE ANGAT", department: "OPERATION & SUPPORT", position: "SENIOR BARISTA", reportsTo: "ARLYN TABIRARA", coach: "ARLYN TABIRARA"},
-            {name: "JEROME PADILLA", department: "OPERATION & SUPPORT", position: "JUNIOR PARTNER ADMINISTRATOR", reportsTo: "ARLYN TABIRARA", coach: "ARLYN TABIRARA"},
-            {name: "TRIPTI SHETTY", department: "OPERATION & SUPPORT", position: "ADMINISTRATOR", reportsTo: "ARLYN TABIRARA", coach: "ARLYN TABIRARA"},
+            {name: "ARLYN TABIRARA", department: "OPERATION & SUPPORT", position: "JUNIOR PARTNER ADMINISTRATOR / ADMIN LEAD", reportsTo: "AHMED ABOELAZAYEM", coach: "SETAREH TOFIGHI", isLead: true, image: "https://i.postimg.cc/265BRN0Z/ARLYN-TABIRARA-JUNIOR-PARTNER-ADMINISTRATOR-OFFICE-MANAGER.jpg"},
+            {name: "AHMED GABER", department: "OPERATION & SUPPORT", position: "ADMINISTRATOR", reportsTo: "ARLYN TABIRARA", coach: "ARLYN TABIRARA", image: "https://i.postimg.cc/k5qbsb8V/AHMED-GABER-ADMINISTRATOR.jpg"},
+            {name: "DHANRAJ POOJARY", department: "OPERATION & SUPPORT", position: "ADMINISTRATOR", reportsTo: "ARLYN TABIRARA", coach: "ARLYN TABIRARA", image: "https://i.postimg.cc/W3fqsYyX/DHANRAJ-POOJARY-TELESALES-SECONDARY.jpg"},
+            {name: "JEANOR BULACON", department: "OPERATION & SUPPORT", position: "OFFICE ASSISTANT", reportsTo: "ARLYN TABIRARA", coach: "ARLYN TABIRARA", image: "https://i.postimg.cc/nzDMt4yC/Jay.jpg"},
+            {name: "JENETTE ANGAT", department: "OPERATION & SUPPORT", position: "SENIOR BARISTA", reportsTo: "ARLYN TABIRARA", coach: "ARLYN TABIRARA", image: "https://i.postimg.cc/zvYvDLN4/Janette.jpg"},
+            {name: "JEROME PADILLA", department: "OPERATION & SUPPORT", position: "JUNIOR PARTNER ADMINISTRATOR", reportsTo: "ARLYN TABIRARA", coach: "ARLYN TABIRARA", image: "https://i.postimg.cc/0QHK9X3R/JEROME-PADILLA-JUNIOR-PARTNER-ADMINISTRATOR.jpg"},
+            {name: "TRIPTI SHETTY", department: "OPERATION & SUPPORT", position: "ADMINISTRATOR", reportsTo: "ARLYN TABIRARA", coach: "ARLYN TABIRARA", image: "https://i.postimg.cc/qqhhqXVh/TRIPTI-SHETTY-ADMINISTRATOR-SECONDARY.jpg"},
             
             // FINANCE DEPARTMENT
-            {name: "AHMED WAHAB", department: "FINANCE DEPARTMENT", position: "CHIEF FINANCE OFFICER", reportsTo: "HISHAM EL ASSAAD", coach: "HISHAM EL ASSAAD", isLead: true},
-            {name: "JUNAID VARDA", department: "FINANCE DEPARTMENT", position: "CHIEF ACCOUNTANT", reportsTo: "AHMED WAHAB", coach: "AHMED WAHAB"},
-            {name: "NAVEEN KUMAR", department: "FINANCE DEPARTMENT", position: "ACCOUNTANT", reportsTo: "AHMED WAHAB", coach: "AHMED WAHAB"},
-            {name: "MOHAMMAD RAZIL", department: "FINANCE DEPARTMENT", position: "ACCOUNTANT", reportsTo: "AHMED WAHAB", coach: "AHMED WAHAB"},
+            {name: "AHMED WAHAB", department: "FINANCE DEPARTMENT", position: "CHIEF FINANCE OFFICER", reportsTo: "HISHAM EL ASSAAD", coach: "HISHAM EL ASSAAD", isLead: true, image: "https://i.postimg.cc/1nkwrF3B/AHMAD-WAHAB.jpg"},
+            {name: "JUNAID VARDA", department: "FINANCE DEPARTMENT", position: "JR PARTNER CHIEF ACCOUNTANT", reportsTo: "AHMED WAHAB", coach: "AHMED WAHAB", image: "https://i.postimg.cc/TwH5TNsZ/JUNAID-VARDA-CHIEF-ACCOUNTANT.jpg"},
+            {name: "NAVEEN KUMAR", department: "FINANCE DEPARTMENT", position: "ACCOUNTANT", reportsTo: "AHMED WAHAB", coach: "AHMED WAHAB", image: "https://i.postimg.cc/3N44NC5W/NAVEEN-KUMAR-ACCOUNTANT.jpg"},
+            {name: "MOHAMMAD RAZIL", department: "FINANCE DEPARTMENT", position: "ACCOUNTANT", reportsTo: "AHMED WAHAB", coach: "AHMED WAHAB", image: "https://i.postimg.cc/5yYYyqdN/MUHAMMED-RAZIL-ACCOUNTANT.jpg"},
             
             // MARKETING DEPARTMENT
             {name: "RANIA SAYED", department: "MARKETING DEPARTMENT", position: "ASSISTANT MARKETING MANAGER", reportsTo: "HISHAM EL ASSAAD", coach: "HISHAM EL ASSAAD", isLead: true, image: "https://i.postimg.cc/rprm2Fk1/RANIA-SEYAD-Social-Media-Branding-Content-Expert.jpg"},
-            {name: "JORDAN SANTOS", department: "MARKETING DEPARTMENT", position: "MARKETING VISUAL SPECIALIST", reportsTo: "RANIA SAYED", coach: "RANIA SAYED"},
+            {name: "JORDAN SANTOS", department: "MARKETING DEPARTMENT", position: "MARKETING VISUAL SPECIALIST", reportsTo: "RANIA SAYED", coach: "RANIA SAYED", image: "https://osusproperties.com/images/osus.png"},
             {name: "ASAD ABRAHANI", department: "MARKETING DEPARTMENT", position: "GRAPHIC DESIGN", reportsTo: "RANIA SAYED", coach: "RANIA SAYED", image: "https://i.postimg.cc/QtFq37t9/ASAD-ANJUM-ABRAHANI-Graphic-Designer.jpg"},
             
-            // FOUNDER'S OFFICE - Arlyn removed from here as she's now in Operations with dual role notation
-            {name: "AHMED MOHAMED MAHMOUD EBRAHIM", department: "FOUNDER'S OFFICE", position: "OFFICE ASSISTANT", reportsTo: "HISHAM EL ASSAAD", coach: "HISHAM EL ASSAAD"},
-            {name: "RENBRAN ANTHONY MADELO", department: "FOUNDER'S OFFICE", position: "JUNIOR PARTNER PERFORMANCE METRIC ANALYST", reportsTo: "HISHAM EL ASSAAD", coach: "HISHAM EL ASSAAD"}
+            // FOUNDER'S OFFICE - Including Arlyn's dual role
+            {name: "ARLYN TABIRARA", department: "FOUNDER'S OFFICE", position: "JUNIOR PARTNER ADMINISTRATOR (DUAL ROLE)", reportsTo: "HISHAM EL ASSAAD", coach: "AHMED ABOELAZAYEM", image: "https://i.postimg.cc/265BRN0Z/ARLYN-TABIRARA-JUNIOR-PARTNER-ADMINISTRATOR-OFFICE-MANAGER.jpg"},
+            {name: "AHMED MOHAMED MAHMOUD EBRAHIM", department: "FOUNDER'S OFFICE", position: "OFFICE ASSISTANT", reportsTo: "HISHAM EL ASSAAD", coach: "HISHAM EL ASSAAD", image: "https://osusproperties.com/images/osus.png"},
+            {name: "RENBRAN ANTHONY MADELO", department: "FOUNDER'S OFFICE", position: "JUNIOR PARTNER PERFORMANCE METRIC ANALYST", reportsTo: "HISHAM EL ASSAAD", coach: "HISHAM EL ASSAAD", image: "https://i.postimg.cc/8cJJcBQv/RENBRAN-ANTHONY-MADELO-JUNIOR-PARTNER-PERFORMANCE-METRIC-ANALYST.png"}
         ];
+
+        // Ensure everyone has an image — use provided Postimg logo for missing photos
+        (function applyDefaultLogo(){
+            const defaultLogo = 'https://i.postimg.cc/TRhhbb1Y/osus-(1).png';
+            for (let i = 0; i < employees.length; i++) {
+                if (!employees[i].image) employees[i].image = defaultLogo;
+            }
+        })();
 
         // Department Configuration
         const deptConfig = {
             "PRIMARY DEPARTMENT": {icon: "🏠", desc: "Primary Sales Team", reportsTo: "Managing Partner"},
+            "PRIMARY DEPARTMENT - WALID TEAM": {icon: "🏘", desc: "Primary Sales - Walid Subsidiary Team", reportsTo: "Senior Partner Primary"},
             "PRIMARY II DEPARTMENT": {icon: "🏡", desc: "Primary II Sales Team", reportsTo: "Managing Partner"},
             "SECONDARY DEPARTMENT": {icon: "🔄", desc: "Secondary Sales Team", reportsTo: "Managing Partner"},
             "STRATEGIC PROJECT": {icon: "⭐", desc: "Exclusive Sales Projects", reportsTo: "Founder"},
@@ -1625,7 +1680,7 @@
 
         // Division groupings
         const divisions = {
-            sales: ["PRIMARY DEPARTMENT", "PRIMARY II DEPARTMENT", "SECONDARY DEPARTMENT"],
+            sales: ["PRIMARY DEPARTMENT", "PRIMARY DEPARTMENT - WALID TEAM", "PRIMARY II DEPARTMENT", "SECONDARY DEPARTMENT"],
             strategic: ["STRATEGIC PROJECT", "DIRECT REPORTING TO FOUNDER"],
             support: ["OPERATION & SUPPORT", "FINANCE DEPARTMENT", "MARKETING DEPARTMENT", "FOUNDER'S OFFICE"]
         };
@@ -1659,6 +1714,7 @@
                             ${lead.position.includes('PARTNER') ? `<span class="lead-badge partner">${lead.position.includes('SENIOR') ? 'Senior Partner' : lead.position.includes('JR') || lead.position.includes('JUNIOR') ? 'Jr Partner' : 'Assoc Partner'}</span>` : ''}
                         </div>
                     </div>
+                    <div class="lead-avatar">${lead.image ? `<img src="${lead.image}" alt="${lead.name}">` : getInitials(lead.name)}</div>
                     <div class="lead-name">${lead.name}</div>
                     <div class="lead-position">${lead.position}</div>
                     <div class="lead-reports">👆 Reports to: ${lead.reportsTo}</div>
@@ -1723,9 +1779,10 @@
             // Total count
             document.getElementById('totalCount').textContent = employees.length;
             
-            // Primary (PRIMARY DEPARTMENT + PRIMARY II DEPARTMENT)
+            // Primary (PRIMARY DEPARTMENT + PRIMARY DEPARTMENT - WALID TEAM + PRIMARY II DEPARTMENT)
             const primaryCount = employees.filter(e => 
                 e.department === 'PRIMARY DEPARTMENT' || 
+                e.department === 'PRIMARY DEPARTMENT - WALID TEAM' ||
                 e.department === 'PRIMARY II DEPARTMENT'
             ).length;
             document.getElementById('primaryCount').textContent = primaryCount;
